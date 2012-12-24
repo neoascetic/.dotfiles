@@ -1,0 +1,13 @@
+*.orig
+
+dist/
+
+.pip/cache
+*.egg-info/
+
+*.py[co]
+*.sw[po]
+*.log
+
+.ropeproject
+.venv

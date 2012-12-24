@@ -1,0 +1,59 @@
+[user]
+    name = Pavel Puchkin
+    email = neoascetic@gmail.com
+
+[color]
+    ui = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[rerere]
+    enabled = 1
+
+[core]
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    filemode=true
+    sharedRepository=group
+    excludesfile = ~/.gitexclude
+
+[alias]
+    co = checkout
+    ci = commit -v
+    amend = commit --amend -C HEAD
+    reword = commit --amend
+    undo = reset --soft HEAD^
+    up = remote update
+    st = status -sb
+    br = branch
+    df = diff --color-words
+    hist = log --pretty=format:'%Cred%h%Creset %ad | %Cgreen%s%d%Creset [%an]' --graph --date=short
+    mg = merge --no-ff
+    ph = push --tags
+
+[push]
+    default = matching
+
+[merge]
+    tool = vimdiff
+
+[github]
+    user = neoascetic
+
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
