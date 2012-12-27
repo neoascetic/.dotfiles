@@ -168,8 +168,8 @@ exec synclient HorizEdgeScroll=1 &
 exec synclient TapButton1=1 &
 
 # apps key shortcuts
-bindsym $alt+w exec google-chrome
-bindsym $alt+f exec pcmanfm
+bindsym $alt+w exec x-www-browser
+bindsym $alt+f exec x-file-browser
 
 # keybindings
 bindsym XF86AudioMute exec amixer set Master toggle
