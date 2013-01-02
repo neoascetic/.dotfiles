@@ -160,7 +160,7 @@ bar {
 }
 
 # windows rules
-for_window [class="Google-chrome"] border none
+for_window [title="- Google Chrome$"] border none
 
 # autostart
 exec .i3/autostart.sh &
