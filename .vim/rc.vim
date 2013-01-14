@@ -16,8 +16,15 @@ filetype indent on
 " default text encoding
 set termencoding=utf-8
 
-" store lots of :cmdline history
-set history=100
+" save undo history even for editor closing
+if version >= 700
+    set history=64
+    set undolevels=128
+    set undodir=~/.vim/undodir/
+    set undofile
+    set undolevels=1000
+    set undoreload=10000
+endif
 
 " show where selection ends
 set cpoptions+=$
