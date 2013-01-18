@@ -32,10 +32,7 @@ export PATH="$HOME/bin:$PATH"
 export CDPATH=".:$HOME/work/:$HOME/src/:$HOME"
 export NODE_PATH="/usr/local/lib/node_modules/"
 
-# workaround to make lxterminal use 256 colors
-if [[ "x$TERM" = "xxterm" ]] then
-    export TERM="xterm-256color"
-fi
+export TERM="xterm-256color"
 
 bindkey "^R" history-incremental-search-backward
 
