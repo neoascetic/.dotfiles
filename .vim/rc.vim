@@ -17,14 +17,13 @@ filetype indent on
 set termencoding=utf-8
 
 " save undo history even for editor closing
-if version >= 700
-    set history=64
-    set undolevels=128
-    set undodir=~/.vim/undodir/
-    set undofile
-    set undolevels=1000
-    set undoreload=10000
-endif
+set history=64
+set undolevels=128
+set undodir=~/.vim/undodir/
+set undofile
+set undolevels=1000
+set undoreload=10000
+set dir=/tmp
 
 " show where selection ends
 set cpoptions+=$
