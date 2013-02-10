@@ -111,3 +111,6 @@ EOF
 menu SetSpell.ru_en :set spl=ru,en spell<CR>
 menu SetSpell.off :set nospell<CR>
 map <F4> :emenu SetSpell.<Tab>
+
+" filetype-depend settings
+autocmd FileType html,css,less setlocal shiftwidth=2 softtabstop=2
