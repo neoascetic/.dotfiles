@@ -42,6 +42,7 @@
     br = branch
     df = diff --color-words
     hist = log --pretty=format:'%Cred%h%Creset %ad | %Cgreen%s%d%Creset [%an]' --graph --date=short
+    toc = log --pretty=format:%s --reverse
     mg = merge --no-ff
     ph = push --tags
 
