@@ -14,6 +14,9 @@ Bundle 'HTML-AutoCloseTag'
 " matchit
 Bundle 'matchit.zip'
 
+" zencoding
+Bundle 'mattn/zencoding-vim'
+
 " syntastic
 Bundle 'scrooloose/syntastic'
 noremap <silent><leader>lc :lcl<CR>
