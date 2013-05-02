@@ -3,25 +3,22 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa foss
 
 source "$HOME/.zsh/antigen/antigen.zsh"
-antigen-lib
+antigen-use oh-my-zsh
 
-antigen-bundles <<EOF
+antigen-bundles <<EOBUNDLES
 debian
-
 vundle
 vi-mode
-
 git
-
 ssh-agent
-
 python
 pip
 virtualenvwrapper
-git://gist.github.com/1522827.git
 
 zsh-users/zsh-syntax-highlighting
-EOF
+zsh-users/zsh-history-substring-search
+sharat87/zsh-vim-mode
+EOBUNDLES
 
 antigen-apply
 
