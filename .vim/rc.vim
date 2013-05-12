@@ -1,10 +1,6 @@
 " activate plugins
 source ~/.vim/plugins.vim
 
-" source of cyrillic keymappings
-source ~/.vim/cyrkeys.vim
-
-
 " ########################################################################## "
 "                                 SETTINGS                                   "
 " ########################################################################## "
@@ -12,6 +8,10 @@ source ~/.vim/cyrkeys.vim
 " syntax enable
 filetype plugin on
 filetype indent on
+
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
 
 " default text encoding
 set termencoding=utf-8
@@ -108,7 +108,7 @@ if 'VIRTUAL_ENV' in os.environ:
 EOF
 
 " Проверка орфографии
-menu SetSpell.ru_en :set spl=ru,en spell<CR>
+menu SetSpell.ru_en :set spl=ru_yo,en_us spell<CR>
 menu SetSpell.off :set nospell<CR>
 map <F4> :emenu SetSpell.<Tab>
 
