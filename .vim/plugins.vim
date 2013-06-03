@@ -66,6 +66,9 @@ Bundle 'int3/vim-extradite'
 " RoR support
 Bundle 'tpope/vim-rails'
 
+" Laravel's Blade templating syntax support
+Bundle 'johnhamelink/blade.vim'
+
 " better(?) markdown support
 Bundle 'tpope/vim-markdown'
 au FileType markdown set tw=80
@@ -74,7 +77,8 @@ au FileType markdown set tw=80
 Bundle 'xolox/vim-easytags'
 let g:easytags_updatetime_autodisable=1
 Bundle 'majutsushi/tagbar'
-nmap <F8> :TagbarToggle<CR>
+let g:tagbar_compact=1
+nmap <F8> :TagbarOpen fj<CR>
 
 " vim-powerline
 set laststatus=2
@@ -98,5 +102,5 @@ Bundle 'ap/vim-css-color'
 syntax enable
 Bundle 'altercation/vim-colors-solarized'
 let g:solarized_termcolors=256
-set background=dark
+set background=light
 colorscheme solarized
