@@ -8,6 +8,11 @@ all:
 	# submodules
 	git submodule init
 	git submodule update
+	# python stuff
+	sudo easy_install pip
+	sudo pip install virtualenvwrapper virtualenvwrapper.tmpenv bpython vim-bridge
+	mkdir -p $(HOME)/.virtualenvs
+	make _link f=.virtualenvs/* t=.virtualenvs
 	# zsh
 	# in most cases I run this script under user that do not have password
 	# chsh -s /bin/zsh
@@ -25,13 +30,6 @@ all:
 	make _link f=.my.cnf
 	make _link f=.grcat
 
-python:
-	# virtualenvwrapper and bpython
-	sudo easy_install pip
-	sudo pip install virtualenvwrapper virtualenvwrapper.tmpenv bpython
-	mkdir -p $(HOME)/.virtualenvs
-	make _link f=.virtualenvs/* t=.virtualenvs
-
 x11:
 	sudo apt-get -y install i3 dmenu
 	# bin
@@ -41,10 +39,6 @@ x11:
 	# patched fonts for vim's powerline
 	mkdir -p $(HOME)/.fonts/
 	make _link f=.fonts/* t=.fonts
-
-submodules_update:
-	git submodule foreach git pull origin master
-	git commit -am 'Submodules update'
 
 _link:
 	ln -si $(CURDIR)/$(f) $(HOME)/$(t)

@@ -73,7 +73,11 @@ Bundle 'johnhamelink/blade.vim'
 Bundle 'tpope/vim-markdown'
 au FileType markdown set tw=80
 
+" RST tables generation
+Bundle 'nvie/vim-rst-tables'
+
 " tags support
+Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-easytags'
 let g:easytags_updatetime_autodisable=1
 Bundle 'majutsushi/tagbar'

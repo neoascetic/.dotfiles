@@ -12,6 +12,7 @@ filetype indent on
 set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
+set pastetoggle=<F2>
 
 " default text encoding
 set termencoding=utf-8
