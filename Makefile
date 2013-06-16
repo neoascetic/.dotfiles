@@ -5,12 +5,13 @@ all:
 	# git
 	make _link f=.gitconfig
 	make _link f=.gitexclude
+	make _link f=.git-template
 	# submodules
 	git submodule init
 	git submodule update
 	# python stuff
 	easy_install --user pip
-	pip --user install virtualenvwrapper virtualenvwrapper.tmpenv bpython vim-bridge
+	pip --user install virtualenvwrapper virtualenvwrapper.tmpenv bpython
 	mkdir -p $(HOME)/.virtualenvs
 	make _link f=.virtualenvs/* t=.virtualenvs
 	# zsh
