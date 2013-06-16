@@ -27,7 +27,6 @@ antigen-theme git://gist.github.com/4071928.git bira_venv
 # Customize to your needs...
 export PATH="$HOME/bin:$PATH"
 export CDPATH=".:$HOME/work/:$HOME/src/:$HOME"
-export NODE_PATH="/usr/local/lib/node_modules/"
 
 export TERM="xterm-256color"
 
