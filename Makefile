@@ -9,8 +9,8 @@ all:
 	git submodule init
 	git submodule update
 	# python stuff
-	sudo easy_install pip
-	sudo pip install virtualenvwrapper virtualenvwrapper.tmpenv bpython vim-bridge
+	easy_install --user pip
+	pip --user install virtualenvwrapper virtualenvwrapper.tmpenv bpython vim-bridge
 	mkdir -p $(HOME)/.virtualenvs
 	make _link f=.virtualenvs/* t=.virtualenvs
 	# zsh
@@ -22,8 +22,8 @@ all:
 	mkdir -p $(HOME)/.ssh
 	make _link f=.ssh/* t=.ssh
 	# vim
-	make _link f=.vim
-	make _link f=.vim/rc.vim t=.vimrc
+	mkdir -p $(HOME)/.vim/undodir
+	make _link f=.vimrc
 	# vundle-update call (antigen will be updated too since session is interactive)
 	zsh -ic "vundle-update"
 	# colorful mysql output

@@ -9,5 +9,4 @@ dist/
 *.sw[po]
 *.log
 
-.ropeproject
 .venv
