@@ -7,8 +7,7 @@ all:
 	make _link f=.gitexclude
 	make _link f=.git-template
 	# submodules
-	git submodule init
-	git submodule update
+	git submodule update --init --recursive
 	# python stuff
 	easy_install --user pip
 	pip --user install virtualenvwrapper virtualenvwrapper.tmpenv bpython
@@ -19,9 +18,6 @@ all:
 	# chsh -s /bin/zsh
 	make _link f=.zsh
 	make _link f=.zsh/rc.zsh t=.zshrc
-	# ssh
-	mkdir -p $(HOME)/.ssh
-	make _link f=.ssh/* t=.ssh
 	# vim
 	mkdir -p $(HOME)/.vim/undodir
 	make _link f=.vimrc
