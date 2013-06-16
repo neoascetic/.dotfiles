@@ -10,7 +10,7 @@ all:
 	git submodule update --init --recursive
 	# python stuff
 	easy_install --user pip
-	pip --user install virtualenvwrapper virtualenvwrapper.tmpenv bpython
+	pip install --user virtualenvwrapper virtualenvwrapper.tmpenv bpython
 	mkdir -p $(HOME)/.virtualenvs
 	make _link f=.virtualenvs/* t=.virtualenvs
 	# zsh
