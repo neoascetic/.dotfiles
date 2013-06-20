@@ -124,6 +124,9 @@ Bundle 'gmarik/vundle'
 " auto close HTML tags
 Bundle 'HTML-AutoCloseTag'
 
+" autoclose quotes, brackets, etc
+Bundle 'Raimondi/delimitMate'
+
 " jump between opening/closing elements by pressing %
 Bundle 'matchit.zip'
 
