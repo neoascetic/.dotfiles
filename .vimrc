@@ -1,11 +1,12 @@
 " ########################################################################## "
 "                                 SETTINGS                                   "
-" ########################################################################## " 
+" ########################################################################## "
 " change the mapleader from \ to ,
 let mapleader=","
 
 syntax enable     " highlight filetypes syntax
 
+set autochdir     " change the current directory automatically
 set hidden        " hide buffers instead of closing them
 set nowrap        " don't wrap lines
 set tabstop=4     " a tab is four spaces
@@ -190,6 +191,6 @@ let g:vimroom_sidebar_height=0
 
 " solarized theme
 Bundle 'altercation/vim-colors-solarized'
-set background=dark
+set background=light
 let g:solarized_termcolors=256
 colorscheme solarized
