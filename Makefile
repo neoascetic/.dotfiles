@@ -1,5 +1,8 @@
 all:
-	sudo apt-get -y install python-setuptools git vim-nox zsh ack-grep exuberant-ctags grc
+	# install vim from the ppa for the youcompleteme plugin
+	sudo add-apt-repository -y ppa:nmi/vim-snapshots
+	sudo apt-get update
+	sudo apt-get -y install python-setuptools git vim zsh ack-grep exuberant-ctags grc
 	# use 'ack' as command instead of 'ack-grep'
 	sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
 	# git
@@ -9,8 +12,8 @@ all:
 	# submodules
 	git submodule update --init --recursive
 	# python stuff
-	easy_install --user pip
-	pip install --user virtualenvwrapper virtualenvwrapper.tmpenv bpython
+	sudo easy_install pip
+	sudo pip install virtualenvwrapper virtualenvwrapper.tmpenv bpython
 	mkdir -p $(HOME)/.virtualenvs
 	make _link f=.virtualenvs/* t=.virtualenvs
 	# zsh
