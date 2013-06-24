@@ -137,7 +137,7 @@ Bundle 'scrooloose/syntastic'
 " comment lines fast!
 Bundle 'tpope/vim-commentary'
 
-" file/buffer finder by pressing CTRP+P (Command-T alternative)
+" file/buffer finder by pressing CTRL+P (Command-T alternative)
 Bundle 'kien/ctrlp.vim'
 
 " better undo history
@@ -159,6 +159,10 @@ au filetype markdown set tw=80
 
 " RestructuredText tables generation
 Bundle 'nvie/vim-rst-tables'
+
+" easy text aligning
+Bundle 'junegunn/vim-easy-align'
+vnoremap <silent> <Enter> :EasyAlign<cr>
 
 " Exuberant tags support
 Bundle 'majutsushi/tagbar'
