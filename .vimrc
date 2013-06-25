@@ -164,6 +164,9 @@ Bundle 'nvie/vim-rst-tables'
 Bundle 'junegunn/vim-easy-align'
 vnoremap <silent> <Enter> :EasyAlign<cr>
 
+" easy motion (like Vimium)
+Bundle 'Lokaltog/vim-easymotion'
+
 " Exuberant tags support
 Bundle 'majutsushi/tagbar'
 nmap <F8> :TagbarOpen fj<CR>
