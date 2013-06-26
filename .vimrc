@@ -137,6 +137,9 @@ Bundle 'scrooloose/syntastic'
 " comment lines fast!
 Bundle 'tpope/vim-commentary'
 
+" change/replace surroundings and wrap words in them easly
+Bundle 'tpope/vim-surround'
+
 " file/buffer finder by pressing CTRL+P (Command-T alternative)
 Bundle 'kien/ctrlp.vim'
 
