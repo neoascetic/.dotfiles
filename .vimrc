@@ -141,8 +141,8 @@ Bundle 'tpope/vim-commentary'
 Bundle 'kien/ctrlp.vim'
 
 " better undo history
-Bundle 'sjl/gundo.vim'
-map <F6> :GundoToggle<CR>
+Bundle 'mbbill/undotree'
+map <F6> :UndotreeToggle<CR>
 
 " integration with ack (http://beyondgrep.com/)
 Bundle 'mileszs/ack.vim'
