@@ -69,7 +69,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " turn off current search highlighting
-nmap <silent> ,/ :nohlsearch<CR>
+nmap <silent> <leader>/ :nohlsearch<CR>
 
 " write file with root privileges
 cmap w!! w !sudo tee % >/dev/null
@@ -101,11 +101,9 @@ set linebreak
 " mark the ideal max text width
 set colorcolumn=81
 
-" Проверка орфографии
-set wildmenu
-menu SetSpell.ru_en :set spl=ru_yo,en_us spell<CR>
-menu SetSpell.off :set nospell<CR>
-map <F4>:emenu SetSpell.<Tab>
+" spelling correction
+set spl=ru_yo,en_us
+nmap <silent> <leader>s :set spell!<CR>
 
 " filetype-depend settings
 autocmd filetype html,css,less setlocal shiftwidth=2 softtabstop=2
