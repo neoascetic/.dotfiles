@@ -31,8 +31,6 @@ set incsearch     " show search matches as you type
 set completeopt-=preview
 
 set history=1000  " remember more commands and search history
-set undolevels=1000
-                  " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title         " change the terminal's title
 
@@ -84,7 +82,6 @@ set imsearch=0
 set termencoding=utf-8
 
 " save undo history even for editor closing
-set undolevels=128
 set undodir=~/.vim/undodir
 set undofile
 set undolevels=1000
@@ -107,6 +104,10 @@ nmap <silent> <leader>s :set spell!<CR>
 
 " filetype-depend settings
 autocmd filetype html,css,less setlocal shiftwidth=2 softtabstop=2
+
+au BufRead,BufNewFile *.less set filetype=less
+au BufRead,BufNewFile *.coffee set filetype=coffee
+au BufRead,BufNewFile *.blade.php set filetype=html
 
 " ########################################################################## "
 "                                 PLUGINS                                    "
@@ -186,9 +187,7 @@ Bundle 'Jinja'
 Bundle 'ap/vim-css-color'
 Bundle 'pangloss/vim-javascript'
 Bundle 'groenewege/vim-less'
-au BufRead,BufNewFile *.less set filetype=less
 Bundle 'kchmck/vim-coffee-script'
-au BufRead,BufNewFile *.coffee set filetype=coffee
 
 " better omnicompletion
 Bundle 'Valloric/YouCompleteMe'
