@@ -42,9 +42,10 @@ set noerrorbells
 set nobackup
 set noswapfile
 
-" highlight whitespaces
+" highlight and remove trailing whitespaces
 set list
 set listchars=tab:▷⋅,trail:⋅,extends:#,nbsp:⋅
+nnoremap <silent> <leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " switch between paste mode
 set pastetoggle=<F2>
