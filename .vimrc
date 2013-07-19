@@ -172,6 +172,7 @@ Bundle 'Lokaltog/vim-easymotion'
 
 " Exuberant tags support
 Bundle 'majutsushi/tagbar'
+let g:tagbar_sort = 0
 nmap <F8> :TagbarOpen fj<CR>
 
 " awesomiest status line
