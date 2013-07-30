@@ -2,7 +2,14 @@
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa foss
 
-source "$HOME/.zsh/antigen/antigen.zsh"
+ADOTDIR="$HOME/.antigen"
+ANTIGEN_PATH="$ADOTDIR/antigen.zsh"
+if [[ ! -e $ANTIGEN_PATH ]]; then
+    mkdir -p $ADOTDIR
+    curl https://raw.github.com/zsh-users/antigen/master/antigen.zsh > $ANTIGEN_PATH
+fi
+source $ANTIGEN_PATH
+
 antigen-use oh-my-zsh
 
 antigen-bundles <<EOBUNDLES

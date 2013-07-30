@@ -1,6 +1,3 @@
-[submodule ".zsh/antigen"]
-	path = .zsh/antigen
-	url = git://github.com/zsh-users/antigen
 [submodule ".fonts/DejaVu"]
 	path = .fonts/DejaVu
 	url = git://gist.github.com/1630581.git

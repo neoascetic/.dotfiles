@@ -19,8 +19,7 @@ all:
 	# zsh
 	# in most cases I run this script under user that do not have password
 	# chsh -s /bin/zsh
-	make _link f=.zsh
-	make _link f=.zsh/rc.zsh t=.zshrc
+	make _link f=.zshrc
 	# vim
 	mkdir -p $(HOME)/.vim/undodir
 	make _link f=.vimrc
