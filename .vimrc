@@ -176,7 +176,10 @@ Bundle 'majutsushi/tagbar'
 let g:tagbar_sort = 0
 nmap <leader>t :TagbarOpen fj<CR>
 
-" awesomiest status line
+" view curren buffers in the statusline
+Bundle "bling/vim-bufferline"
+
+" awesomier status line
 set laststatus=2
 Bundle 'bling/vim-airline'
 let g:airline_theme = 'solarized'
