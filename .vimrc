@@ -76,6 +76,7 @@ cmap w!! w !sudo tee % >/dev/null
 filetype plugin indent on
 
 set keymap=russian-jcukenwin
+inoremap <C-l> <C-^>
 set iminsert=0
 set imsearch=0
 
