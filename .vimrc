@@ -186,7 +186,7 @@ let g:airline_theme = 'solarized'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_linecolumn_prefix = '¶ '
-let g:airline_fugitive_prefix = '⎇  '
+let g:airline_branch_prefix = '⎇  '
 let g:airline_paste_symbol = 'ρ'
 
 " show count of matches
