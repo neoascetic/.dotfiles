@@ -177,10 +177,14 @@ let g:tagbar_sort = 0
 nmap <leader>t :TagbarOpen fj<CR>
 
 " awesomiest status line
-" TODO: unmantained, need to swich to https://github.com/Lokaltog/powerline
 set laststatus=2
-Bundle 'Lokaltog/vim-powerline'
-let g:Powerline_symbols='fancy'
+Bundle 'bling/vim-airline'
+let g:airline_theme = 'solarized'
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_linecolumn_prefix = '¶ '
+let g:airline_fugitive_prefix = '⎇  '
+let g:airline_paste_symbol = 'ρ'
 
 " show count of matches
 Bundle 'IndexedSearch'

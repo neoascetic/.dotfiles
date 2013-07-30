@@ -9,8 +9,6 @@ all:
 	make _link f=.gitconfig
 	make _link f=.gitexclude
 	make _link f=.git-template
-	# submodules
-	git submodule update --init --recursive
 	# python stuff
 	sudo easy_install pip
 	sudo pip install virtualenvwrapper virtualenvwrapper.tmpenv bpython
@@ -31,13 +29,8 @@ all:
 
 x11:
 	sudo apt-get -y install i3 dmenu
-	# bin
 	make _link f=bin
-	# i3
 	make _link f=.i3
-	# patched fonts for vim's powerline
-	mkdir -p $(HOME)/.fonts/
-	make _link f=.fonts/* t=.fonts
 
 _link:
 	ln -si $(CURDIR)/$(f) $(HOME)/$(t)
