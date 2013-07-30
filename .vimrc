@@ -45,7 +45,7 @@ set noswapfile
 " highlight and remove trailing whitespaces
 set list
 set listchars=tab:▷⋅,trail:⋅,extends:#,nbsp:⋅
-nnoremap <silent> <leader>t :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <silent> <leader>c :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " switch between paste mode
 set pastetoggle=<F2>
@@ -145,7 +145,7 @@ Bundle 'kien/ctrlp.vim'
 
 " better undo history
 Bundle 'mbbill/undotree'
-map <F6> :UndotreeToggle<CR>
+map <leader>u :UndotreeToggle<CR>
 
 " integration with ack (http://beyondgrep.com/)
 Bundle 'mileszs/ack.vim'
@@ -173,7 +173,7 @@ Bundle 'Lokaltog/vim-easymotion'
 " Exuberant tags support
 Bundle 'majutsushi/tagbar'
 let g:tagbar_sort = 0
-nmap <F8> :TagbarOpen fj<CR>
+nmap <leader>t :TagbarOpen fj<CR>
 
 " awesomiest status line
 " TODO: unmantained, need to swich to https://github.com/Lokaltog/powerline
