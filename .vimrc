@@ -206,6 +206,10 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'mikewest/vimroom'
 let g:vimroom_sidebar_height=0
 
+" Start screen for vim
+Bundle 'mhinz/vim-startify'
+let g:startify_bookmarks = ['~/.vimrc']
+
 " solarized theme
 Bundle 'altercation/vim-colors-solarized'
 set background=light
