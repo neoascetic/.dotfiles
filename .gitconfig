@@ -34,7 +34,7 @@
 
 [alias]
     co = checkout
-    ci = commit -v
+    cm = commit -v
     amend = commit --amend -C HEAD
     reword = commit --amend
     undo = reset --soft HEAD^
