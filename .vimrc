@@ -73,8 +73,6 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 " write file with root privileges
 cmap w!! w !sudo tee % >/dev/null
 
-filetype plugin indent on
-
 set keymap=russian-jcukenwin
 inoremap <C-l> <C-^>
 set iminsert=0
@@ -116,6 +114,7 @@ au BufRead,BufNewFile *.blade.php set filetype=html
 " ########################################################################## "
 
 " Call Vundle
+filetype off
 set rtp+=~/.vim/bundle/vundle/
 let g:vundle_default_git_proto = 'git'
 call vundle#rc()
@@ -140,6 +139,9 @@ Bundle 'tpope/vim-commentary'
 
 " change/replace surroundings and wrap words in them easly
 Bundle 'tpope/vim-surround'
+
+" mainly using if for sname_case/camelCase/MixedCase converting
+Bundle 'tpope/vim-abolish'
 
 " file/buffer finder by pressing CTRL+P (Command-T alternative)
 Bundle 'kien/ctrlp.vim'
@@ -215,3 +217,5 @@ Bundle 'altercation/vim-colors-solarized'
 set background=light
 let g:solarized_termcolors=256
 colorscheme solarized
+
+filetype plugin indent on " required to be after Vundle installation
