@@ -145,6 +145,7 @@ Bundle 'tpope/vim-abolish'
 
 " file/buffer finder by pressing CTRL+P (Command-T alternative)
 Bundle 'kien/ctrlp.vim'
+let g:ctrlp_clear_cache_on_exit = 0
 
 " better undo history
 Bundle 'mbbill/undotree'
@@ -200,6 +201,10 @@ Bundle 'ap/vim-css-color'
 Bundle 'pangloss/vim-javascript'
 Bundle 'groenewege/vim-less'
 Bundle 'kchmck/vim-coffee-script'
+
+" fast html/css writing
+Bundle 'mattn/emmet-vim'
+let g:user_emmet_leader_key = '<c-e>'
 
 " better omnicompletion
 Bundle 'Valloric/YouCompleteMe'
