@@ -109,6 +109,12 @@ au BufRead,BufNewFile *.less set filetype=less
 au BufRead,BufNewFile *.coffee set filetype=coffee
 au BufRead,BufNewFile *.blade.php set filetype=html
 
+function! SortLines() range
+    execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
+    execute a:firstline . "," . a:lastline . 'sort n'
+    execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
+endfunction
+
 " ########################################################################## "
 "                                 PLUGINS                                    "
 " ########################################################################## "
