@@ -223,6 +223,9 @@ let g:vimroom_sidebar_height=0
 Bundle 'mhinz/vim-startify'
 let g:startify_bookmarks = ['~/.vimrc']
 
+" TODO.txt
+Bundle 'freitass/todo.txt-vim'
+
 " solarized theme
 Bundle 'altercation/vim-colors-solarized'
 set background=dark
