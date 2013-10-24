@@ -160,7 +160,8 @@ bar {
 }
 
 # windows rules
-for_window [title="- Google Chrome$"] border none
+for_window [class="Marlin"] floating enable
+for_window [title="^Properties$"] border none
 
 # autostart
 exec .i3/autostart.sh &
