@@ -42,6 +42,13 @@ set noerrorbells
 set nobackup
 set noswapfile
 
+" no GUI - no problem
+set guioptions=a
+
+" system clipboard access
+vnoremap <A-c> "+y
+noremap <A-v> "+p
+
 " highlight and remove trailing whitespaces
 set list
 set listchars=tab:▷⋅,trail:⋅,extends:#,nbsp:⋅
@@ -221,7 +228,7 @@ let g:vimroom_sidebar_height=0
 
 " Start screen for vim
 Bundle 'mhinz/vim-startify'
-let g:startify_bookmarks = ['~/.vimrc']
+let g:startify_bookmarks = ['~/.vimrc', '~/Dropbox/todo/todo.txt']
 
 " TODO.txt
 Bundle 'freitass/todo.txt-vim'
@@ -229,6 +236,7 @@ Bundle 'freitass/todo.txt-vim'
 " solarized theme
 Bundle 'altercation/vim-colors-solarized'
 set background=dark
+call togglebg#map("<leader><leader>")
 let g:solarized_termcolors=256
 colorscheme solarized
 
