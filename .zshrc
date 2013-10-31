@@ -47,4 +47,6 @@ alias -g DATE="date +%d.%m.%Y"
 alias -g TIME="date +%H:%M"
 alias -g A="| ack"
 
+alias -g gvim='gvim --servername $VIM_SERVERNAME --remote-silent'
+
 md5() { echo -n "$1" | md5sum - | cut -d' ' -f1; }
