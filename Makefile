@@ -2,7 +2,7 @@ all:
 	# install vim from the ppa for the youcompleteme plugin
 	sudo add-apt-repository -y ppa:nmi/vim-snapshots
 	sudo apt-get update
-	sudo apt-get -y install python-setuptools git vim zsh ack-grep exuberant-ctags grc
+	sudo apt-get -y install python-setuptools git vim zsh ack-grep exuberant-ctags
 	# use 'ack' as command instead of 'ack-grep'
 	sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
 	# git
@@ -25,7 +25,6 @@ all:
 	zsh -ic "vundle-update"
 	# colorful mysql output
 	make _link f=.my.cnf
-	make _link f=.grcat
 
 x11:
 	sudo apt-get -y install i3 dmenu
