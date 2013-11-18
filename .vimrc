@@ -193,7 +193,10 @@ let g:tagbar_sort = 0
 nmap <leader>t :TagbarOpen fj<CR>
 
 " view curren buffers in the statusline
-Bundle "bling/vim-bufferline"
+Bundle 'bling/vim-bufferline'
+
+" http://editorconfig.org/
+Bundle 'editorconfig/editorconfig-vim'
 
 " awesomier status line
 set laststatus=2
