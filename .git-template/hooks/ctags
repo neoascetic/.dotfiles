@@ -8,5 +8,5 @@ TEMP_TAGS="$TAGS_FILE.$$"
 
 trap "rm -f $TEMP_TAGS" EXIT
 
-ctags --tag-relative -Rf "$TEMP_TAGS" --exclude=.git
+ctags --tag-relative -Rf "$TEMP_TAGS" --exclude=.git --exclude=node_modules --languages=-javascript,sql
 mv "$TEMP_TAGS" "$TAGS_FILE"
