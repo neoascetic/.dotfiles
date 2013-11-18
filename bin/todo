@@ -1,2 +1,2 @@
 #!/bin/sh
-gvim ~/Dropbox/todo/todo.txt
+gvim ~/Dropbox/notes/todo.txt
