@@ -175,6 +175,9 @@ Bundle 'jmcantrell/vim-virtualenv'
 " git wrapper
 Bundle 'tpope/vim-fugitive'
 
+" shows +/- on modified lines using info provided by git
+Bundle 'airblade/vim-gitgutter'
+
 " better(?) markdown support
 Bundle 'tpope/vim-markdown'
 au filetype markdown set tw=80
@@ -228,8 +231,7 @@ let g:user_emmet_leader_key = '<c-e>'
 Bundle 'Valloric/YouCompleteMe'
 
 " zenmode for writing
-Bundle 'mikewest/vimroom'
-let g:vimroom_sidebar_height=0
+Bundle 'junegunn/goyo.vim'
 
 " Start screen for vim
 Bundle 'mhinz/vim-startify'
@@ -239,10 +241,7 @@ let g:startify_bookmarks = ['~/.vimrc', '~/Dropbox/todo/todo.txt']
 Bundle 'freitass/todo.txt-vim'
 
 " solarized theme
-Bundle 'altercation/vim-colors-solarized'
-set background=dark
-call togglebg#map("<leader><leader>")
-let g:solarized_termcolors=256
-colorscheme solarized
+Bundle 'junegunn/seoul256.vim'
+colorscheme seoul256
 
 filetype plugin indent on " required to be after Vundle installation
