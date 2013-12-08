@@ -30,7 +30,7 @@ EOBUNDLES
 
 antigen-apply
 
-antigen-theme git://gist.github.com/4071928.git bira_venv
+antigen theme sindresorhus/pure pure
 
 # Customize to your needs...
 export PATH=".:$HOME/bin:$PATH"
