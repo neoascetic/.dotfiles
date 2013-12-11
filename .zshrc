@@ -2,6 +2,10 @@
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa foss
 
+BASE16_SCHEME="tomorrow"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+
 ADOTDIR="$HOME/.antigen"
 ANTIGEN_PATH="$ADOTDIR/antigen.zsh"
 if [[ ! -e $ANTIGEN_PATH ]]; then

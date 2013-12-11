@@ -241,7 +241,9 @@ let g:startify_bookmarks = ['~/.vimrc', '~/Dropbox/todo/todo.txt']
 Bundle 'freitass/todo.txt-vim'
 
 " solarized theme
-Bundle 'junegunn/seoul256.vim'
-colorscheme seoul256
+Bundle 'chriskempson/base16-vim'
+let base16colorspace=256
+set background=dark
+colorscheme base16-tomorrow
 
 filetype plugin indent on " required to be after Vundle installation
