@@ -2,17 +2,19 @@
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa foss
 
-BASE16_SCHEME="tomorrow"
-BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
-[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+ADOTDIR="$HOME/.zsh"
+[[ ! -d $ADOTDIR ]] && mkdir -p $ADOTDIR
 
-ADOTDIR="$HOME/.antigen"
 ANTIGEN_PATH="$ADOTDIR/antigen.zsh"
-if [[ ! -e $ANTIGEN_PATH ]]; then
-    mkdir -p $ADOTDIR
-    curl https://raw.github.com/zsh-users/antigen/master/antigen.zsh > $ANTIGEN_PATH
-fi
+[[ ! -e $ANTIGEN_PATH ]] &&
+    curl -L https://raw.github.com/zsh-users/antigen/master/antigen.zsh > $ANTIGEN_PATH
 source $ANTIGEN_PATH
+
+BASE16_SCHEME="tomorrow"
+BASE16_SHELL="$ADOTDIR/base16-$BASE16_SCHEME.dark.sh"
+[[ ! -e $BASE16_SHELL ]] &&
+    curl -L https://raw.github.com/chriskempson/base16-shell/master/base16-$BASE16_SCHEME.dark.sh > $BASE16_SHELL
+source $BASE16_SHELL
 
 antigen-use oh-my-zsh
 
@@ -30,11 +32,11 @@ extract
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search
 sharat87/zsh-vim-mode
+
+sindresorhus/pure # theme
 EOBUNDLES
 
 antigen-apply
-
-antigen theme sindresorhus/pure pure
 
 # Customize to your needs...
 export PATH=".:$HOME/bin:$PATH"
