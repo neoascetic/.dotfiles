@@ -74,9 +74,6 @@ bindsym $mod+Shift+space floating toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-#bindcode $mod+d focus child
-
 # switch to workspace
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
@@ -103,6 +100,8 @@ bindsym $mod+Shift+ampersand move workspace 7
 bindsym $mod+Shift+asterisk move workspace 8
 bindsym $mod+Shift+parenleft move workspace 9
 bindsym $mod+Shift+parenright move workspace 10
+
+bindsym $mod+n workspace new
 
 # reload the configuration file
 bindsym $mod+Shift+C reload
