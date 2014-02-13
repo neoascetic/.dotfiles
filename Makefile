@@ -2,7 +2,7 @@ all:
 	# install vim from the ppa for the youcompleteme plugin
 	sudo add-apt-repository -y ppa:nmi/vim-snapshots
 	sudo apt-get update
-	sudo apt-get -y install python-setuptools git vim zsh ack-grep exuberant-ctags
+	sudo apt-get -y install python-setuptools git vim zsh ack-grep exuberant-ctags curl
 	# use 'ack' as command instead of 'ack-grep'
 	sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
 	# git
