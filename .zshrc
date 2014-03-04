@@ -1,3 +1,5 @@
+export DYLD_FORCE_FLAT_NAMESPACE=1
+
 # plugins' settings
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 zstyle :omz:plugins:ssh-agent identities id_rsa foss
