@@ -10,6 +10,8 @@ fi
 # Customize to your needs...
 
 export DYLD_FORCE_FLAT_NAMESPACE=1
+export TERM="xterm-256color"
+export CDPATH=".:$HOME/work/:$HOME/src/:$HOME"
 
 BASE16_SCHEME="tomorrow"
 BASE16_SHELL="$HOME/.base16-$BASE16_SCHEME.dark.sh"
