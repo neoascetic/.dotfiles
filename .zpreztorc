@@ -23,7 +23,9 @@ zstyle ':prezto:load' pmodule \
   'history' \
   'spectrum' \
   'utility' \
+  'directory' \
   'completion' \
+  'fasd' \
   'git' \
   'archive' \
   'syntax-highlighting' \
