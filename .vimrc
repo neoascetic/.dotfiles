@@ -124,88 +124,72 @@ function! SortLines() range
     execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
 endfunction
 
+filetype plugin indent on
+
 " ########################################################################## "
 "                                 PLUGINS                                    "
 " ########################################################################## "
 
-" Call Vundle
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-let g:vundle_default_git_proto = 'git'
-call vundle#rc()
-
-" let Vundle manage itself
-Bundle 'gmarik/vundle'
+call plug#begin()
+let g:plug_timeout = 600
 
 " auto close HTML tags
-Bundle 'HTML-AutoCloseTag'
+Plug 'HTML-AutoCloseTag'
 
 " autoclose quotes, brackets, etc
-Bundle 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 
 " jump between opening/closing elements by pressing %
-Bundle 'matchit.zip'
+Plug 'matchit.zip'
 
 " syntax checking
-Bundle 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
 " comment lines fast!
-Bundle 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 
 " change/replace surroundings and wrap words in them easly
-Bundle 'tpope/vim-surround'
-
-" mainly using if for sname_case/camelCase/MixedCase converting
-Bundle 'tpope/vim-abolish'
+Plug 'tpope/vim-surround'
 
 " file/buffer finder by pressing CTRL+P (Command-T alternative)
-Bundle 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 let g:ctrlp_clear_cache_on_exit = 0
 
 " better undo history
-Bundle 'mbbill/undotree'
+Plug 'mbbill/undotree'
 map <leader>u :UndotreeToggle<CR>
 
 " integration with ack (http://beyondgrep.com/)
-Bundle 'mileszs/ack.vim'
-
-" virtualenv support
-Bundle 'jmcantrell/vim-virtualenv'
+Plug 'mileszs/ack.vim'
 
 " git wrapper
-Bundle 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " shows +/- on modified lines using info provided by git
-Bundle 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 " better(?) markdown support
-Bundle 'tpope/vim-markdown'
+Plug 'tpope/vim-markdown'
 au filetype markdown set tw=80
 
-" RestructuredText tables generation
-Bundle 'nvie/vim-rst-tables'
-
 " easy text aligning
-Bundle 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align'
 vnoremap <silent> <Enter> :EasyAlign<cr>
 
-" easy motion (like Vimium)
-Bundle 'Lokaltog/vim-easymotion'
+" easy motion (like Vimperator)
+Plug 'Lokaltog/vim-easymotion'
 
 " Exuberant tags support
-Bundle 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 let g:tagbar_sort = 0
 nmap <leader>t :TagbarOpen fj<CR>
 
 " view curren buffers in the statusline
-Bundle 'bling/vim-bufferline'
-
-" http://editorconfig.org/
-Bundle 'editorconfig/editorconfig-vim'
+Plug 'bling/vim-bufferline'
 
 " awesomier status line
 set laststatus=2
-Bundle 'bling/vim-airline'
+Plug 'bling/vim-airline'
 let g:airline_theme = 'tomorrow'
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
@@ -214,36 +198,31 @@ let g:airline_branch_prefix = '⎇  '
 let g:airline_paste_symbol = 'ρ'
 
 " show count of matches
-Bundle 'IndexedSearch'
+Plug 'IndexedSearch'
 
 " syntax plugins
-Bundle 'Jinja'
-Bundle 'ap/vim-css-color'
-Bundle 'pangloss/vim-javascript'
-Bundle 'groenewege/vim-less'
-Bundle 'kchmck/vim-coffee-script'
+Plug 'ap/vim-css-color'
+Plug 'pangloss/vim-javascript'
+Plug 'groenewege/vim-less'
 
 " fast html/css writing
-Bundle 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 let g:user_emmet_leader_key = '<c-e>'
 
 " better omnicompletion
-Bundle 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 
 " zenmode for writing
-Bundle 'junegunn/goyo.vim'
-
-" Start screen for vim
-Bundle 'mhinz/vim-startify'
-let g:startify_bookmarks = ['~/.vimrc', '~/Dropbox/todo/todo.txt']
+Plug 'junegunn/goyo.vim'
 
 " TODO.txt
-Bundle 'freitass/todo.txt-vim'
+Plug 'freitass/todo.txt-vim'
 
 " solarized theme
-Bundle 'chriskempson/base16-vim'
+Plug 'chriskempson/base16-vim'
+
+call plug#end()
+
 let base16colorspace=256
 set background=dark
 colorscheme base16-tomorrow
-
-filetype plugin indent on " required to be after Vundle installation
