@@ -113,8 +113,7 @@ nmap <silent> <leader>s :set spell!<CR>
 autocmd filetype html,css,less setlocal shiftwidth=2 softtabstop=2
 
 au BufRead,BufNewFile *.less set filetype=less
-au BufRead,BufNewFile *.coffee set filetype=coffee
-au BufRead,BufNewFile *.blade.php set filetype=html
+autocmd CursorMoved *.php,*.js exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
 abb pdb import pdb; pdb.set_trace()
 
