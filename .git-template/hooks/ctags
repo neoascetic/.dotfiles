@@ -1,5 +1,4 @@
-#!/bin/sh
-set -e
+#!/bin/sh -e
 
 HOOK_DIR=$(dirname $0)
 GIT_DIR=$(dirname $HOOK_DIR)

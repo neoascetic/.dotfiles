@@ -1,0 +1,16 @@
+#!/bin/sh -e
+
+# Do not allow to commit the changed where the is a FIXME string in the diff.
+# You can ignore this pre-commit hook by adding "--no-verify" flag to the
+# commit command: "git commit --no-verify"
+
+exec 1>&2
+
+FORBIDDEN_RE="FIXME"
+
+if [ $(git diff --cached -i -G "$FORBIDDEN_RE" | wc -l) != 0 ]; then
+    git --no-pager diff --cached -i -G "$FORBIDDEN_RE"
+    echo
+    echo "ERROR: You're trying to commit a line containing the $FORBIDDEN_RE re"
+    exit 1
+fi
