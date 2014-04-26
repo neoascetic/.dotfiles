@@ -115,7 +115,8 @@ autocmd filetype html,css,less setlocal shiftwidth=2 softtabstop=2
 au BufRead,BufNewFile *.less set filetype=less
 autocmd CursorMoved *.php,*.js exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
-abb pdb import pdb; pdb.set_trace()
+iabb pdb import pdb; pdb.set_trace()<Esc>:w<CR>
+iabb dd var_dump( ); die(1);<Esc>2F(a
 
 function! SortLines() range
     execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
