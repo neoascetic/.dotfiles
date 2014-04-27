@@ -103,7 +103,7 @@ set cursorline
 set linebreak
 
 " mark the ideal max text width
-set colorcolumn=81
+set colorcolumn=80
 
 " spelling correction
 set spl=ru_yo,en_us
@@ -170,7 +170,7 @@ Plug 'airblade/vim-gitgutter'
 
 " better(?) markdown support
 Plug 'tpope/vim-markdown'
-au filetype markdown set tw=80
+au filetype markdown set tw=79
 
 " easy text aligning
 Plug 'junegunn/vim-easy-align'
