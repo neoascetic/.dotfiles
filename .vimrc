@@ -226,3 +226,5 @@ call plug#end()
 let base16colorspace=256
 set background=dark
 colorscheme base16-tomorrow
+
+autocmd Syntax * syn keyword Todo TODO FIXME XXX NOTE containedin=ALL
