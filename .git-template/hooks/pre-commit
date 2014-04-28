@@ -8,7 +8,7 @@ exec 1>&2
 
 FORBIDDEN_RE="FIXME"
 
-if [ $(git diff --cached -i -G "$FORBIDDEN_RE" | wc -l) != 0 ]; then
+if [ $(git diff --cached | grep -i "^+.*$FORBIDDEN_RE" | wc -l) != 0 ]; then
     git --no-pager diff --cached -i -G "$FORBIDDEN_RE"
     echo
     echo "ERROR: You're trying to commit a line containing the $FORBIDDEN_RE re"
