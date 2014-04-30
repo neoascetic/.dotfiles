@@ -171,6 +171,7 @@ Plug 'airblade/vim-gitgutter'
 " better(?) markdown support
 Plug 'tpope/vim-markdown'
 au filetype markdown set tw=79
+au filetype markdown set formatprg=par\ 79j
 
 " easy text aligning
 Plug 'junegunn/vim-easy-align'
@@ -227,4 +228,5 @@ let base16colorspace=256
 set background=dark
 colorscheme base16-tomorrow
 
+" mainly for highlighting NOTE keyword
 autocmd Syntax * syn keyword Todo TODO FIXME XXX NOTE containedin=ALL
