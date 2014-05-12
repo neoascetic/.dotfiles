@@ -157,6 +157,8 @@ let g:ctrlp_clear_cache_on_exit = 0
 
 " better undo history
 Plug 'mbbill/undotree'
+let g:undotree_WindowLayout = 2
+let g:undotree_SetFocusWhenToggle = 1
 map <leader>u :UndotreeToggle<CR>
 
 " integration with ack (http://beyondgrep.com/)
