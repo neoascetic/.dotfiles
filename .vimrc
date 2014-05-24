@@ -122,7 +122,7 @@ au BufRead,BufNewFile *.less set filetype=less
 autocmd CursorMoved *.php,*.js exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
 iabb pdb import pdb; pdb.set_trace()<Esc>:w<CR>
-iabb dd var_dump( ); die(1);<Esc>2F(a
+iabb dd var_dump( ); die( 1 ); // FIXME<Esc>2F(a
 
 function! SortLines() range
     execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
