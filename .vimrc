@@ -124,6 +124,9 @@ autocmd CursorMoved *.php,*.js exe printf('match IncSearch /\V\<%s\>/', escape(e
 iabb pdb import pdb; pdb.set_trace()<Esc>:w<CR>
 iabb dd var_dump( ); die( 1 ); // FIXME<Esc>2F(a
 
+set foldmethod=syntax
+let php_folding=1
+
 function! SortLines() range
     execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
     execute a:firstline . "," . a:lastline . 'sort n'
