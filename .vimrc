@@ -221,8 +221,12 @@ Plug 'groenewege/vim-less'
 Plug 'mattn/emmet-vim'
 let g:user_emmet_leader_key = '<c-e>'
 
-" better omnicompletion
+" better omnicompletition
 Plug 'Valloric/YouCompleteMe'
+
+" omnicompletition for PHP
+Plug 'shawncplus/phpcomplete.vim'
+let g:phpcomplete_parse_docblock_comments=1
 
 " zenmode for writing
 Plug 'junegunn/goyo.vim'
