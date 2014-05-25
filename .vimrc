@@ -121,9 +121,6 @@ autocmd filetype html,css,less setlocal shiftwidth=2 softtabstop=2
 au BufRead,BufNewFile *.less set filetype=less
 autocmd CursorMoved *.php,*.js exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
-iabb pdb import pdb; pdb.set_trace()<Esc>:w<CR>
-iabb dd var_dump( ); die( 1 ); // FIXME<Esc>2F(a
-
 set foldmethod=syntax
 let php_folding=1
 
@@ -227,6 +224,19 @@ Plug 'Valloric/YouCompleteMe'
 " omnicompletition for PHP
 Plug 'shawncplus/phpcomplete.vim'
 let g:phpcomplete_parse_docblock_comments=1
+
+" snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" autogeneration of the docs for PHP
+Plug 'tobyS/vmustache'
+Plug 'tobyS/pdv'
+let g:pdv_template_dir = $HOME ."/.vim/plugged/pdv/templates_snip"
+nnoremap <buffer> <leader>d :call pdv#DocumentWithSnip()<CR>
 
 " zenmode for writing
 Plug 'junegunn/goyo.vim'
