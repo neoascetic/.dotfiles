@@ -236,7 +236,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv'
 let g:pdv_template_dir = $HOME ."/.vim/plugged/pdv/templates_snip"
-nnoremap <buffer> <leader>d :call pdv#DocumentWithSnip()<CR>
+nnoremap <buffer> <leader>p :call pdv#DocumentWithSnip()<CR>
 
 " zenmode for writing
 Plug 'junegunn/goyo.vim'
@@ -246,6 +246,10 @@ Plug 'freitass/todo.txt-vim'
 
 " solarized theme
 Plug 'chriskempson/base16-vim'
+
+" OSX's Dash integration
+Plug 'rizzatti/dash.vim'
+nmap <silent> <leader>d <Plug>DashSearch
 
 call plug#end()
 
