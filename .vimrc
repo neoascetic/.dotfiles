@@ -145,8 +145,9 @@ Plug 'HTML-AutoCloseTag'
 " autoclose quotes, brackets, etc
 Plug 'Raimondi/delimitMate'
 
-" jump between opening/closing elements by pressing %
+" jump between opening/closing XML elements by pressing % and highlight them
 Plug 'matchit.zip'
+Plug 'gregsexton/MatchTag'
 
 " syntax checking
 Plug 'scrooloose/syntastic'
