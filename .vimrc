@@ -252,6 +252,9 @@ Plug 'chriskempson/base16-vim'
 Plug 'rizzatti/dash.vim'
 nmap <silent> <leader>d <Plug>DashSearch
 
+" editorconfig
+Plug 'editorconfig/editorconfig-vim'
+
 call plug#end()
 
 let base16colorspace=256
