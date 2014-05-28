@@ -117,9 +117,9 @@ nmap <silent> <leader>s :set spell!<CR>
 
 " filetype-depend settings
 autocmd filetype html,css,less setlocal shiftwidth=2 softtabstop=2
-
-au BufRead,BufNewFile *.less set filetype=less
+autocmd BufRead,BufNewFile *.less set filetype=less
 autocmd CursorMoved *.php,*.js exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+autocmd filetype xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
 set foldmethod=syntax
 let php_folding=1
