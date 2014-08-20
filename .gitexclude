@@ -1,5 +1,8 @@
 *.orig
 
+*.iml
+*.idea
+
 *.py[co]
 *.sw[po]
 *.log
