@@ -47,7 +47,7 @@
     hub = !.git/hub
 
 [push]
-    default = matching
+    default = current
 
 [merge]
     tool = vimdiff
