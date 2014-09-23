@@ -22,3 +22,5 @@ if [[ $TERM_PROGRAM = "iTerm.app" ]]; then
 fi
 
 export EDITOR='vim'
+
+_byobu_sourced=1 . /usr/bin/byobu-launch
