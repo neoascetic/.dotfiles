@@ -11,7 +11,6 @@ fi
 
 export DYLD_FORCE_FLAT_NAMESPACE=1
 export TERM="xterm-256color"
-export CDPATH=".:$HOME/work/:$HOME/src/:$HOME"
 
 if [[ $TERM_PROGRAM = "iTerm.app" ]]; then
     BASE16_SCHEME="tomorrow"
