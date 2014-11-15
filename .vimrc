@@ -243,9 +243,6 @@ nnoremap <buffer> <leader>p :call pdv#DocumentWithSnip()<CR>
 " zenmode for writing
 Plug 'junegunn/goyo.vim'
 
-" TODO.txt
-Plug 'freitass/todo.txt-vim'
-
 " solarized theme
 Plug 'chriskempson/base16-vim'
 
