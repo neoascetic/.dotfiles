@@ -216,29 +216,12 @@ Plug 'ap/vim-css-color'
 Plug 'pangloss/vim-javascript'
 Plug 'groenewege/vim-less'
 
-" fast html/css writing
-Plug 'mattn/emmet-vim'
-let g:user_emmet_leader_key = '<c-e>'
-
-" better omnicompletition
-Plug 'Valloric/YouCompleteMe'
-
-" omnicompletition for PHP
-Plug 'shawncplus/phpcomplete.vim'
-let g:phpcomplete_parse_docblock_comments=1
-
 " snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
-" autogeneration of the docs for PHP
-Plug 'tobyS/vmustache'
-Plug 'tobyS/pdv'
-let g:pdv_template_dir = $HOME ."/.vim/plugged/pdv/templates_snip"
-nnoremap <buffer> <leader>p :call pdv#DocumentWithSnip()<CR>
 
 " zenmode for writing
 Plug 'junegunn/goyo.vim'
