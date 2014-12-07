@@ -9,7 +9,6 @@ fi
 
 # Customize to your needs...
 
-export DYLD_FORCE_FLAT_NAMESPACE=1
 export TERM="xterm-256color"
 
 if [[ $TERM_PROGRAM = "Apple_Terminal" ]]; then
