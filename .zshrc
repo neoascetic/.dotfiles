@@ -20,5 +20,3 @@ if [[ $TERM_PROGRAM = "Apple_Terminal" ]]; then
 fi
 
 export EDITOR='vim'
-
-_byobu_sourced=1 . /usr/bin/byobu-launch
