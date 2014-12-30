@@ -1,7 +1,5 @@
 #!/bin/bash -e
 
-chsh -s /bin/zsh
-
 if [[ ! -d ~/.dotfiles ]]; then
     git clone --recursive git@github.com:neoascetic/dotfiles.git ~/.dotfiles
 else
