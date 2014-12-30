@@ -20,3 +20,4 @@ if [[ $TERM_PROGRAM = "Apple_Terminal" ]]; then
 fi
 
 export EDITOR='vim'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -160,8 +160,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
 " file/buffer finder by pressing CTRL+P (Command-T alternative)
-Plug 'kien/ctrlp.vim'
-let g:ctrlp_clear_cache_on_exit = 0
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+map <C-p> :FZF<CR>
 
 " better undo history
 Plug 'mbbill/undotree'

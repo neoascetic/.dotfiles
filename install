@@ -1,11 +1,24 @@
 #!/bin/bash -e
 
-git clone --recursive git@github.com:neoascetic/dotfiles.git ~/.dotfiles
+chsh -s /bin/zsh
+
+if [[ ! -d ~/.dotfiles ]]; then
+    git clone --recursive git@github.com:neoascetic/dotfiles.git ~/.dotfiles
+else
+    cd ~/.dotfiles
+    git pull origin master
+    git submodule update --init --recursive
+    cd -
+fi
+
 ln -sf ~/.dotfiles/.[!.]* ~/
-rm -f ~/.git
+rm -f ~/.git # :)
+yes | ~/.fzf/install
+
+# vim
 mkdir -p ~/.vim/undodir
 mkdir -p ~/.vim/autoload
 curl -fLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim +PlugInstall +qa
-chsh -s /bin/zsh
+
 echo "DONE!"
