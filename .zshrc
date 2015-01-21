@@ -11,7 +11,7 @@ fi
 
 export TERM="xterm-256color"
 
-if [[ $TERM_PROGRAM = "Apple_Terminal" ]]; then
+if [[ $TERM_PROGRAM = "iTerm.app" ]]; then
     BASE16_SCHEME="tomorrow"
     BASE16_SHELL="$HOME/.base16-$BASE16_SCHEME.dark.sh"
     [[ ! -e $BASE16_SHELL ]] &&
