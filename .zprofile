@@ -45,6 +45,7 @@ cdpath=(
 path=(
   .
   vendor/bin
+  node_modules/.bin
   /usr/local/{bin,sbin}
   $path
 )
