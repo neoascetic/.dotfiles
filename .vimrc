@@ -1,8 +1,9 @@
 " ########################################################################## "
 "                                 SETTINGS                                   "
 " ########################################################################## "
-" change the mapleader from \ to ,
-let mapleader=","
+" change the mapleader
+" disabled, at least until https://youtrack.jetbrains.com/issue/VIM-650 is fixed
+"let mapleader=","
 
 syntax enable     " highlight filetypes syntax
 
