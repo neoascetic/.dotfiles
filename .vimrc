@@ -83,7 +83,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " turn off current search highlighting
-nmap <silent> <leader>/ :nohlsearch<CR>
+nmap <silent> <leader>c :nohlsearch<CR>
 
 " write file with root privileges
 cmap w!! w !sudo tee % >/dev/null
