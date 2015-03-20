@@ -1,9 +1,8 @@
 " ########################################################################## "
 "                                 SETTINGS                                   "
 " ########################################################################## "
-" change the mapleader
-" disabled, at least until https://youtrack.jetbrains.com/issue/VIM-650 is fixed
-"let mapleader=","
+" change the mapleader from \ to ,
+let mapleader=","
 
 syntax enable     " highlight filetypes syntax
 
@@ -60,7 +59,7 @@ noremap <A-v> "+p
 " highlight and remove trailing whitespaces
 set list
 set listchars=tab:▷⋅,trail:⋅,extends:#,nbsp:⋅
-nnoremap <silent> <leader>c :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <silent> <leader>/ :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " switch between paste mode
 set pastetoggle=<F2>
