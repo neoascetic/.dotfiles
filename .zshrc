@@ -1,23 +1,23 @@
-#
-# Executes commands at the start of an interactive session.
-#
-
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
-
-# Customize to your needs...
-
+alias g='git'
 export TERM="xterm-256color"
-
-if [[ $TERM_PROGRAM = "iTerm.app" ]]; then
-    BASE16_SCHEME="tomorrow"
-    BASE16_SHELL="$HOME/.base16-$BASE16_SCHEME.dark.sh"
-    [[ ! -e $BASE16_SHELL ]] &&
-        curl -L https://raw.github.com/chriskempson/base16-shell/master/base16-$BASE16_SCHEME.dark.sh > $BASE16_SHELL
-    source $BASE16_SHELL
-fi
-
 export EDITOR='vim'
+export CDPATH=.:$HOME:$HOME/work:$HOME/src
+export PATH=.:vendor/bin:node_modules/.bin:$PATH
+
+[[ ! -f "$HOME/.antigen.zsh" ]] && curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > $HOME/.antigen.zsh
+source "$HOME/.antigen.zsh"
+
+antigen bundle chriskempson/base16-shell base16-tomorrow.dark.sh
+
+antigen use prezto
+zstyle ':prezto:*:*' color 'yes'
+antigen bundle sorin-ionescu/prezto modules/utility
+antigen bundle sorin-ionescu/prezto modules/history
+antigen bundle sorin-ionescu/prezto modules/directory
+antigen bundle sorin-ionescu/prezto modules/completion
+
+antigen bundle sindresorhus/pure
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
