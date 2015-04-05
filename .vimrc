@@ -118,12 +118,8 @@ nmap <silent> <leader>s :set spell!<CR>
 
 " filetype-depend settings
 autocmd filetype html,css,less,lua setlocal shiftwidth=2 softtabstop=2
-autocmd BufRead,BufNewFile *.less set filetype=less
-autocmd CursorMoved *.php,*.js exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 autocmd filetype xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
-
-set foldmethod=syntax
-let php_folding=1
 
 function! SortLines() range
     execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
@@ -183,17 +179,8 @@ Plug 'tpope/vim-markdown'
 au filetype markdown set tw=79
 au filetype markdown set formatprg=par\ 79j
 
-" easy text aligning
-Plug 'junegunn/vim-easy-align'
-vnoremap <silent> <Enter> :EasyAlign<cr>
-
 " easy motion (like Vimperator)
 Plug 'Lokaltog/vim-easymotion'
-
-" Exuberant tags support
-Plug 'majutsushi/tagbar'
-let g:tagbar_sort = 0
-nmap <leader>t :TagbarOpen fj<CR>
 
 " view curren buffers in the statusline
 Plug 'bling/vim-bufferline'
