@@ -17,6 +17,7 @@ antigen bundle sorin-ionescu/prezto modules/directory
 antigen bundle sorin-ionescu/prezto modules/completion
 
 antigen bundle sindresorhus/pure
+antigen bundle sharat87/zsh-vim-mode
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
 
