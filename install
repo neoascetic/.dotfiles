@@ -1,17 +1,19 @@
 #!/bin/bash -e
 
 if [[ ! -d ~/.dotfiles ]]; then
-    git clone --recursive git@github.com:neoascetic/dotfiles.git ~/.dotfiles
-else
-    cd ~/.dotfiles
-    git pull origin master
-    git submodule update --init --recursive
-    cd -
+  git clone --recursive git@github.com:neoascetic/dotfiles.git ~/.dotfiles
 fi
 
 ln -sf ~/.dotfiles/.[!.]* ~/
 rm -f ~/.git # :)
-yes | ~/.fzf/install
+
+# antigen
+curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > ~/.antigen.zsh
+
+# fzf
+mkdir -p ~/.fzf
+curl -L https://github.com/junegunn/fzf/archive/master.tar.gz | tar xz --strip-components 1 -C ~/.fzf
+~/.fzf/install
 
 # vim
 mkdir -p ~/.vim/undodir
