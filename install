@@ -10,11 +10,6 @@ rm -f ~/.git # :)
 # antigen
 curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > ~/.antigen.zsh
 
-# fzf
-mkdir -p ~/.fzf
-curl -L https://github.com/junegunn/fzf/archive/master.tar.gz | tar xz --strip-components 1 -C ~/.fzf
-~/.fzf/install
-
 # vim
 mkdir -p ~/.vim/undodir
 mkdir -p ~/.vim/autoload
