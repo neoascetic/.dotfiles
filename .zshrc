@@ -1,8 +1,6 @@
-alias g='git'
-
 export EDITOR='vim'
 export TERM="xterm-256color"
-export CDPATH=.:$HOME:$HOME/work:$HOME/src
+export CDPATH=.:~:~/work:~/src
 export PATH=.:vendor/bin:node_modules/.bin:$PATH
 
 source ~/.fzf.zsh
@@ -17,7 +15,11 @@ sorin-ionescu/prezto modules/utility
 sorin-ionescu/prezto modules/history
 sorin-ionescu/prezto modules/directory
 sorin-ionescu/prezto modules/completion
-sharat87/zsh-vim-mode
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search
 EOBUNDLES
+
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+alias g='git'
