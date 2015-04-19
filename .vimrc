@@ -117,14 +117,14 @@ set spl=ru_yo,en_us
 nmap <silent> <leader>s :set spell!<CR>
 
 " filetype-depend settings
-autocmd filetype html,css,less,lua setlocal shiftwidth=2 softtabstop=2
+autocmd filetype html,css,less,lua,vim setlocal shiftwidth=2 softtabstop=2
 autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 autocmd filetype xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
 function! SortLines() range
-    execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
-    execute a:firstline . "," . a:lastline . 'sort n'
-    execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
+  execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
+  execute a:firstline . "," . a:lastline . 'sort n'
+  execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
 endfunction
 
 filetype plugin indent on
@@ -225,6 +225,3 @@ call plug#end()
 let base16colorspace=256
 set background=dark
 silent! colorscheme base16-tomorrow
-
-" mainly for highlighting NOTE keyword
-autocmd Syntax * syn keyword Todo TODO FIXME XXX NOTE containedin=ALL
