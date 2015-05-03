@@ -200,13 +200,6 @@ Plug 'ap/vim-css-color'
 Plug 'pangloss/vim-javascript'
 Plug 'groenewege/vim-less'
 
-" snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
 " zenmode for writing
 Plug 'junegunn/goyo.vim'
 
@@ -216,9 +209,6 @@ Plug 'chriskempson/base16-vim'
 " OSX's Dash integration
 Plug 'rizzatti/dash.vim'
 nmap <silent> <leader>d <Plug>DashSearch
-
-" editorconfig
-Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
