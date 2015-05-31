@@ -2,9 +2,6 @@ export EDITOR='vim'
 export TERM="xterm-256color"
 export CDPATH=.:~:~/work:~/src
 export PATH=.:vendor/bin:node_modules/.bin:/usr/local/bin:$PATH
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/pavel/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
 
 source ~/.fzf.zsh
 source ~/.antigen.zsh
