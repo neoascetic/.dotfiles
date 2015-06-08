@@ -117,7 +117,7 @@ set spl=ru_yo,en_us
 nmap <silent> <leader>s :set spell!<CR>
 
 " filetype-depend settings
-autocmd filetype html,css,less,lua,vim setlocal shiftwidth=2 softtabstop=2
+autocmd filetype html,css,less,lua,vim,yaml setlocal shiftwidth=2 softtabstop=2
 autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 autocmd filetype xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
