@@ -43,7 +43,7 @@
     df = diff --color-words
     hist = log --pretty=format:'%Cred%h%Creset %ad | %Cgreen%s%d%Creset [%an]' --graph --date=short
     mg = merge --no-ff
-    hub = !.git/hub
+    open = !.git/open
 
 [push]
     default = current
