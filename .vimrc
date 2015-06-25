@@ -208,6 +208,10 @@ Plug 'guns/vim-clojure-static'
 Plug 'tpope/vim-fireplace'
 Plug 'vim-scripts/paredit.vim'
 Plug 'kien/rainbow_parentheses.vim'
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 " solarized theme
 Plug 'chriskempson/base16-vim'
