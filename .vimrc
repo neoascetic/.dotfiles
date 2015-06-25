@@ -203,6 +203,12 @@ Plug 'groenewege/vim-less'
 " zenmode for writing
 Plug 'junegunn/goyo.vim'
 
+" Clojure stuff
+Plug 'guns/vim-clojure-static'
+Plug 'tpope/vim-fireplace'
+Plug 'vim-scripts/paredit.vim'
+Plug 'kien/rainbow_parentheses.vim'
+
 " solarized theme
 Plug 'chriskempson/base16-vim'
 
