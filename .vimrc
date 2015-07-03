@@ -31,7 +31,7 @@ set gdefault      " 'g' flag is default in subtitutes
 " mouse support
 set ttyfast
 set ttymouse=xterm2
-set mouse=a
+set mouse=n
 set clipboard=unnamed
 
 " do not show preview window on completion
