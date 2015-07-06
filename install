@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/zsh -e
 
 if [[ ! -d ~/.dotfiles ]]; then
   git clone --recursive git@github.com:neoascetic/dotfiles.git ~/.dotfiles
