@@ -198,6 +198,7 @@ Plug 'IndexedSearch'
 Plug 'ap/vim-css-color'
 Plug 'pangloss/vim-javascript'
 Plug 'groenewege/vim-less'
+Plug 'hylang/vim-hy'
 
 " zenmode for writing
 Plug 'junegunn/goyo.vim'
