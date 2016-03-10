@@ -1,7 +1,7 @@
 export EDITOR='vim'
 export TERM="xterm-256color"
 export CDPATH=.:~:~/work:~/src
-export PATH=.:vendor/bin:node_modules/.bin:/usr/local/bin:$PATH
+export PATH=.:vendor/bin:node_modules/.bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 source ~/.fzf.zsh
 source ~/.antigen.zsh
