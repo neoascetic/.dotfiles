@@ -1,5 +1,4 @@
 export EDITOR='vim'
-export TERM="xterm-256color"
 export CDPATH=.:~:~/work:~/src
 export PATH=.:vendor/bin:node_modules/.bin:/usr/local/bin:/usr/local/sbin:$PATH
 
@@ -8,8 +7,8 @@ source ~/.antigen.zsh
 
 antigen use prezto
 zstyle ':prezto:*:*' color 'yes'
+
 antigen bundles <<EOBUNDLES
-chriskempson/base16-shell base16-tomorrow.dark.sh
 sindresorhus/pure
 felixr/docker-zsh-completion
 zsh-users/zsh-syntax-highlighting

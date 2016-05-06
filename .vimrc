@@ -16,6 +16,7 @@ set backspace=indent,eol,start
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
 set number        " always show line numbers
+set relativenumber
 set shiftwidth=4  " number of spaces to use for autoindenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set showmatch     " set show matching parenthesis
@@ -37,7 +38,6 @@ set clipboard=unnamed
 " do not show preview window on completion
 set completeopt-=preview
 
-set history=1000  " remember more commands and search history
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title         " change the terminal's title
 
@@ -214,7 +214,7 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " solarized theme
-Plug 'chriskempson/base16-vim'
+Plug 'altercation/vim-colors-solarized'
 
 " OSX's Dash integration
 Plug 'rizzatti/dash.vim'
@@ -222,6 +222,6 @@ nmap <silent> <leader>d <Plug>DashSearch
 
 call plug#end()
 
-let base16colorspace=256
 set background=dark
-silent! colorscheme base16-tomorrow
+let g:solarized_termcolors=256
+colorscheme solarized
