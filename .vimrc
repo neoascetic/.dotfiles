@@ -1,11 +1,11 @@
 " ########################################################################## "
 "                                 SETTINGS                                   "
 " ########################################################################## "
-" change the mapleader from \ to ,
 let mapleader=","
 
-syntax enable     " highlight filetypes syntax
+syntax enable
 
+set autowrite
 set autochdir     " change the current directory automatically
 set hidden        " hide buffers instead of closing them
 set nowrap        " don't wrap lines
@@ -20,13 +20,13 @@ set relativenumber
 set shiftwidth=4  " number of spaces to use for autoindenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set showmatch     " set show matching parenthesis
+set hlsearch      " highlight search terms
+set incsearch     " show search matches as you type
 set ignorecase    " ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase,
                   " case-sensitive otherwise
 set smarttab      " insert tabs on the start of a line according to
                   " shiftwidth, not tabstop
-set hlsearch      " highlight search terms
-set incsearch     " show search matches as you type
 set gdefault      " 'g' flag is default in subtitutes
 
 " mouse support
@@ -82,7 +82,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " turn off current search highlighting
-nmap <silent> <leader>c :nohlsearch<CR>
+nmap <silent> <BS> :nohlsearch<CR>
 
 " write file with root privileges
 cmap w!! w !sudo tee % >/dev/null
@@ -96,7 +96,7 @@ set imsearch=0
 set termencoding=utf-8
 
 " save undo history even for editor closing
-set undodir=~/.vim/undodir
+set undodir=$HOME/.vim/undodir
 set undofile
 set undolevels=1000
 set undoreload=1000
@@ -115,6 +115,7 @@ set colorcolumn=80
 " spelling correction
 set spl=ru_yo,en_us
 nmap <silent> <leader>s :set spell!<CR>
+nmap  S  :%s//g<LEFT><LEFT>
 
 " filetype-depend settings
 autocmd filetype html,css,less,lua,vim,yaml setlocal shiftwidth=2 softtabstop=2
@@ -184,13 +185,6 @@ Plug 'Lokaltog/vim-easymotion'
 " view curren buffers in the statusline
 Plug 'bling/vim-bufferline'
 
-" awesomier status line
-set laststatus=2
-Plug 'bling/vim-airline'
-let g:airline_theme = 'tomorrow'
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-
 " show count of matches
 Plug 'IndexedSearch'
 
@@ -216,6 +210,8 @@ au Syntax * RainbowParenthesesLoadBraces
 " solarized theme
 Plug 'altercation/vim-colors-solarized'
 
+Plug 'editorconfig/editorconfig-vim'
+
 " OSX's Dash integration
 Plug 'rizzatti/dash.vim'
 nmap <silent> <leader>d <Plug>DashSearch
@@ -224,4 +220,4 @@ call plug#end()
 
 set background=dark
 let g:solarized_termcolors=256
-colorscheme solarized
+silent! colorscheme solarized
