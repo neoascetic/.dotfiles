@@ -142,6 +142,8 @@
 	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
 	ZmZmg6i7UT+DUATePYMl2hA+AYY=
 	</data>
+	<key>shellExitAction</key>
+	<integer>0</integer>
 	<key>type</key>
 	<string>Window Settings</string>
 	<key>whiteColour</key>

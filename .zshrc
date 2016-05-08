@@ -1,5 +1,6 @@
 export EDITOR='vim'
 export CDPATH=.:~:~/work:~/src
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} history -n"
 export PATH=.:vendor/bin:node_modules/.bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 source ~/.fzf.zsh
