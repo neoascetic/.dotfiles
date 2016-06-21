@@ -2,6 +2,10 @@ EDITOR='vim'
 CDPATH=.:~:~/work:~/src
 PATH=.:vendor/bin:node_modules/.bin:/usr/local/bin:/usr/local/sbin:$PATH
 
+bindkey -v
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
 source ~/.fzf.zsh
 source ~/.antigen.zsh
 
@@ -18,9 +22,5 @@ sorin-ionescu/prezto modules/history
 sorin-ionescu/prezto modules/directory
 sorin-ionescu/prezto modules/completion
 EOBUNDLES
-
-bindkey -v
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
 
 alias g='git'
