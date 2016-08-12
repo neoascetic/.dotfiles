@@ -13,14 +13,16 @@ antigen use prezto
 zstyle ':prezto:*:*' color 'yes'
 
 antigen bundles <<EOBUNDLES
+mafredri/zsh-async
 sindresorhus/pure
 felixr/docker-zsh-completion
-zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search
+zsh-users/zsh-syntax-highlighting
 sorin-ionescu/prezto modules/utility
 sorin-ionescu/prezto modules/history
 sorin-ionescu/prezto modules/directory
 sorin-ionescu/prezto modules/completion
+paulirish/git-open
 EOBUNDLES
 
 alias g='git'
