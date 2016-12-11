@@ -10,10 +10,4 @@ rm -f ~/.git # :)
 # antigen
 curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > ~/.antigen.zsh
 
-# vim
-mkdir -p ~/.vim/undodir
-mkdir -p ~/.vim/autoload
-curl -fLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-vim +PlugInstall +qa
-
 echo "DONE!"
