@@ -1,9 +1,10 @@
-EDITOR='emacs'
+EDITOR=emacs
 CDPATH=.:~:~/work:~/src
 PATH=.:vendor/bin:node_modules/.bin:/usr/local/bin:/usr/local/sbin:$PATH
 
-alias vim="$EDITOR"
-alias g='git'
+alias e=$EDITOR
+alias vim=e
+alias g=git
 
 source ~/.fzf.zsh
 source ~/.antigen.zsh
