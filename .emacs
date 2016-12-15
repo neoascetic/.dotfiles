@@ -26,6 +26,7 @@
 (setq undo-tree-history-directory-alist `(("." . "~/.emacs.d/undo")))
 
 (setq evil-want-C-u-scroll t)
+(setq evil-toggle-key "")
 (evil-mode)
 
 (global-git-gutter-mode)
