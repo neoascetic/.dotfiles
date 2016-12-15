@@ -16,7 +16,7 @@ typeset -U path cdpath fpath
 cdpath=(. ~ ~/work ~/src $cdpath)
 path=(. vendor/bin node_modules/.bin /usr/local/bin /usr/local/sbin $path)
 
-HISTFILE="${ZDOTDIR:-$HOME}/.zhistory" SAVEHIST=1000 HISTSIZE=1000
+HISTFILE="$HOME/.zhistory" SAVEHIST=1000 HISTSIZE=1000
 setopt INC_APPEND_HISTORY SHARE_HISTORY HIST_BEEP
 setopt HIST_IGNORE_DUPS HIST_IGNORE_ALL_DUPS HIST_EXPIRE_DUPS_FIRST HIST_SAVE_NO_DUPS
 
