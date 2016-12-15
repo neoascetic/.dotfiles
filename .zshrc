@@ -1,20 +1,26 @@
-typeset -U path cdpath
-path=(. vendor/bin node_modules/.bin /usr/local/bin /usr/local/sbin $path)
-cdpath=(. ~ ~/work ~/src $cdpath)
-
-EDITOR=emacs
-alias e=$EDITOR
-alias vim=e
-alias g=git
-
-function ensure!() {
-  f="$HOME/.zsh/$1/$2"
-  if [[ ! -a $f ]]; then
-    mkdir -p $(dirname $f)
-    curl -L# https://github.com/$1/raw/master/$2 > $f
-  fi
-  source $f
+function plug!() {
+  local repo="$HOME/.zsh/$1"
+  [[ -d $repo ]] || git clone --depth=1 git://github.com/$1 $repo
+  for f in "${@:2}"; do source "$repo/$f"; done
 }
 
-ensure! sindresorhus/pure async.zsh
-ensure! sindresorhus/pure pure.zsh
+plug! sindresorhus/pure async.zsh pure.zsh
+plug! paulirish/git-open git-open.plugin.zsh
+plug! zsh-users/zsh-completions zsh-completions.plugin.zsh
+
+autoload -Uz compinit && compinit
+zstyle ':completion:*' menu select
+
+setopt AUTOCD
+typeset -U path cdpath fpath
+cdpath=(. ~ ~/work ~/src $cdpath)
+path=(. vendor/bin node_modules/.bin /usr/local/bin /usr/local/sbin $path)
+
+HISTFILE="${ZDOTDIR:-$HOME}/.zhistory" SAVEHIST=1000 HISTSIZE=1000
+setopt INC_APPEND_HISTORY SHARE_HISTORY HIST_BEEP
+setopt HIST_IGNORE_DUPS HIST_IGNORE_ALL_DUPS HIST_EXPIRE_DUPS_FIRST HIST_SAVE_NO_DUPS
+
+EDITOR=emacs
+alias e=$EDITOR vim=e
+alias g=git
+alias ls="ls -GF"
