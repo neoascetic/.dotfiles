@@ -1,3 +1,6 @@
+[url "git@github.com:"]
+    insteadOf = gh:
+
 [user]
     name = Pavel Puchkin
     email = i@neoascetic.me

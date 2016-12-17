@@ -1,5 +1,8 @@
 (setq custom-file "~/.emacs.d/custom.el")
-(setq backup-directory-alist `(("." . "~/.emacs.d/saves")))
+(setq make-backup-files nil)
+(setq auto-save-file-name-transforms `((".*" "~/.emacs.d/saves/" t)))
+
+(setq-default fill-column 80)
 
 (setq linum-format "%d ")
 (global-linum-mode)
@@ -38,5 +41,7 @@
 
 (add-hook 'clojure-mode-hook 'hl-sexp-mode)
 (add-hook 'emacs-lisp-mode-hook 'hl-sexp-mode)
+
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
