@@ -32,8 +32,6 @@
 (setq evil-toggle-key "")
 (evil-mode)
 
-(global-git-gutter-mode)
-
 (add-hook 'prog-mode-hook 'rainbow-mode)
 (add-hook 'prog-mode-hook 'editorconfig-mode)
 (add-hook 'prog-mode-hook 'global-company-mode)
