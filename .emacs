@@ -13,6 +13,7 @@
 (unless package-archive-contents (package-refresh-contents))
 (setq package-selected-packages
       '(rainbow-delimiters
+	highlight-symbol
 	rainbow-mode
 	editorconfig
 	clojure-mode
@@ -35,6 +36,7 @@
 (add-hook 'prog-mode-hook 'rainbow-mode)
 (add-hook 'prog-mode-hook 'editorconfig-mode)
 (add-hook 'prog-mode-hook 'global-company-mode)
+(add-hook 'prog-mode-hook 'highlight-symbol-mode)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 (add-hook 'clojure-mode-hook 'hl-sexp-mode)
