@@ -9,8 +9,6 @@
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
-(unless package-archive-contents (package-refresh-contents))
 (setq package-selected-packages
       '(rainbow-delimiters
 	highlight-symbol
@@ -19,9 +17,16 @@
 	clojure-mode
 	git-gutter
 	undo-tree
+	company
 	hl-sexp
 	paredit
+	goto-chg ; evil's dependency
 	evil))
+(setq package-load-list
+      (mapcar (lambda (p) `(,p t))
+	      package-selected-packages))
+(package-initialize)
+(unless package-archive-contents (package-refresh-contents))
 (package-install-selected-packages)
 
 (setq show-paren-when-point-inside-paren t)
