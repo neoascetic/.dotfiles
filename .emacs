@@ -19,8 +19,8 @@
 	clojure-mode
 	git-gutter
 	undo-tree
-	company
 	hl-sexp
+	paredit
 	evil))
 (package-install-selected-packages)
 
