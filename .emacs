@@ -44,8 +44,14 @@
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
+(add-hook 'lisp-mode-hook 'hl-sexp-mode)
 (add-hook 'clojure-mode-hook 'hl-sexp-mode)
 (add-hook 'emacs-lisp-mode-hook 'hl-sexp-mode)
+
+(add-hook 'lisp-mode-hook 'paredit-mode)
+(add-hook 'clojure-mode-hook 'paredit-mode)
+(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+(add-hook 'eval-expression-minibuffer-setup-hook 'paredit-mode)
 
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
