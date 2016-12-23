@@ -52,6 +52,13 @@
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 (add-hook 'eval-expression-minibuffer-setup-hook 'paredit-mode)
+(add-hook
+ 'paredit-mode-hook
+ (lambda ()
+   (define-key paredit-mode-map (kbd "ESC <right>") 'paredit-backward-barf-sexp)
+   (define-key paredit-mode-map (kbd "ESC <left>") 'paredit-forward-barf-sexp)
+   (define-key paredit-mode-map (kbd "M-f") 'paredit-forward-slurp-sexp)
+   (define-key paredit-mode-map (kbd "M-b") 'paredit-backward-slurp-sexp)))
 
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
