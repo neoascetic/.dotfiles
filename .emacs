@@ -10,8 +10,7 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (setq package-selected-packages
-      '(rainbow-delimiters
-	highlight-symbol
+      '(highlight-symbol
 	rainbow-mode
 	editorconfig
 	clojure-mode
@@ -38,11 +37,9 @@
 (setq evil-toggle-key "")
 (evil-mode)
 
-(add-hook 'prog-mode-hook 'rainbow-mode)
 (add-hook 'prog-mode-hook 'editorconfig-mode)
 (add-hook 'prog-mode-hook 'global-company-mode)
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 (add-hook 'lisp-mode-hook 'hl-sexp-mode)
 (add-hook 'clojure-mode-hook 'hl-sexp-mode)
@@ -63,3 +60,30 @@
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; my-own stupid theme
+(let ((fg-gray "#606060")
+      (bg-gray "#282828")
+      (lg-gray "#2f2f2f")
+      (purple  "#ff00ff")
+      (yellow  "#ffff00")
+      (blue    "#00ffff")
+      (warning "#ff0000"))
+
+  (custom-set-faces
+    `(default ((t (:foreground ,fg-gray :background ,bg-gray))))
+    `(cursor ((t (:background ,fg-gray))))
+    `(fringe ((t (:background ,bg-gray))))
+    `(mode-line ((t (:foreground ,bg-gray :background ,fg-gray))))
+    `(region ((t (:background ,lg-gray))))
+    `(secondary-selection ((t (:background ,lg-gray))))
+    `(font-lock-builtin-face ((t (:foreground ,fg-gray))))
+    `(font-lock-comment-face ((t (:foreground ,purple))))
+    `(font-lock-function-name-face ((t (:foreground ,fg-gray))))
+    `(font-lock-keyword-face ((t (:foreground ,fg-gray))))
+    `(font-lock-string-face ((t (:foreground ,yellow))))
+    `(font-lock-type-face ((t (:foreground ,fg-gray))))
+    `(font-lock-constant-face ((t (:foreground ,blue))))
+    `(font-lock-variable-name-face ((t (:foreground ,fg-gray))))
+    `(minibuffer-prompt ((t (:foreground ,fg-gray :bold t))))
+    `(font-lock-warning-face ((t (:foreground ,warning :bold t))))))
