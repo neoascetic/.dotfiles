@@ -4,6 +4,8 @@
 
 (setq-default fill-column 80)
 
+(menu-bar-mode -1)
+
 (setq linum-format "%d ")
 (global-linum-mode)
 
