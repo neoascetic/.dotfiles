@@ -25,3 +25,5 @@ EDITOR=emacs
 alias e=$EDITOR vim=e
 alias g=git
 alias ls="ls -GF"
+
+eval $(docker-machine env)
