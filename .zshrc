@@ -5,7 +5,7 @@ function plug!() {
   for f in "${@:2}"; do source "$dir/$f"; done
 }
 
-plug! neoascetic/zsh-async:combined-jobs async.zsh
+plug! mafredri/zsh-async async.zsh
 plug! sindresorhus/pure pure.zsh
 plug! paulirish/git-open git-open.plugin.zsh
 plug! zsh-users/zsh-completions zsh-completions.plugin.zsh
