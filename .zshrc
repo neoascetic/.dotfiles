@@ -1,10 +1,12 @@
 function plug!() {
-  local repo="$HOME/.zsh/$1"
-  [[ -d $repo ]] || git clone --depth=1 git://github.com/$1 $repo
-  for f in "${@:2}"; do source "$repo/$f"; done
+  local arg=("${(@s/:/)1}") && r=$arg[1] && b=${arg[2]:=master}
+  local dir="$HOME/.zsh/$r/$b"
+  [[ -d $dir ]] || git clone --depth=1 --branch=$b git://github.com/$r $dir
+  for f in "${@:2}"; do source "$dir/$f"; done
 }
 
-plug! sindresorhus/pure async.zsh pure.zsh
+plug! neoascetic/zsh-async:combined-jobs async.zsh
+plug! sindresorhus/pure pure.zsh
 plug! paulirish/git-open git-open.plugin.zsh
 plug! zsh-users/zsh-completions zsh-completions.plugin.zsh
 
@@ -26,4 +28,15 @@ alias e=$EDITOR vim=e
 alias g=git
 alias ls="ls -GF"
 
-eval $(docker-machine env)
+# register docker's env async
+function docker-env-ready() {
+  if (( $2 )); then
+    return $(async_job docker-env 'sleep 5; docker-machine env')
+  fi
+  async_stop_worker docker-env
+  eval $3
+}
+async
+async_start_worker docker-env -u -n
+async_register_callback docker-env docker-env-ready
+async_job docker-env docker-machine env
