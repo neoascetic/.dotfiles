@@ -9,6 +9,21 @@
 (setq linum-format "%d ")
 (global-linum-mode)
 
+(xterm-mouse-mode t)
+(global-set-key [mouse-4] 'scroll-down-line)
+(global-set-key [mouse-5] 'scroll-up-line)
+
+;; copy-paste to the global clipboard
+(defun copy-from-osx ()
+  (shell-command-to-string "pbpaste"))
+(defun paste-to-osx (text &optional push)
+  (let ((process-connection-type nil))
+    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+      (process-send-string proc text)
+      (process-send-eof proc))))
+(setq interprogram-cut-function 'paste-to-osx)
+(setq interprogram-paste-function 'copy-from-osx)
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (setq package-selected-packages
