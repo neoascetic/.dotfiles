@@ -32,20 +32,20 @@ alias ls="ls -GF"
 function docker-machine() {
   command docker-machine $@
   if [[ "$1" = "start" ]]; then
-    command docker-machine env > /tmp/docker-env
+    touch /tmp/docker-machine-running
   elif [[ "$1" = "stop" ]]; then
-    rm /tmp/docker-env
+    rm /tmp/docker-machine-running
   fi
 }
 function docker-env-ready() {
   if (( $2 )); then
-    return $(async_job docker-env 'sleep 5; cat /tmp/docker-env')
+    return $(async_job docker-env 'sleep 5; test -e /tmp/docker-machine-running')
   fi
   async_stop_worker docker-env
-  eval $3
+  eval $(docker-machine env)
 }
 
 async
 async_start_worker docker-env -u -n
 async_register_callback docker-env docker-env-ready
-async_job docker-env cat /tmp/docker-env
+async_job docker-env test -e /tmp/docker-machine-running
