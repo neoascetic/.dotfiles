@@ -1,3 +1,4 @@
+# usage: plug! some/repo[:branch] file-to.load ...
 function plug!() {
   local arg=("${(@s/:/)1}") && r=$arg[1] && b=${arg[2]:=master}
   local dir="$HOME/.zsh/$r/$b"
@@ -5,11 +6,20 @@ function plug!() {
   for f in "${@:2}"; do source "$dir/$f"; done
 }
 
-plug! mafredri/zsh-async async.zsh
-plug! sindresorhus/pure pure.zsh
+plug! sindresorhus/pure async.zsh pure.zsh
 plug! paulirish/git-open git-open.plugin.zsh
 plug! zsh-users/zsh-completions zsh-completions.plugin.zsh
 
+# usage: sleep 5; notify
+alias notify='echo 1 | nc 127.0.0.1 4321'
+function anysound() {
+  while true; do
+    nc -l 4321 && afplay -v 10 /System/Library/Sounds/Glass.aiff
+  done
+}
+[[ $(lsof -Pi :4321 -sTCP:LISTEN) ]] || anysound > /dev/null &!
+
+# other stuff
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -49,15 +59,3 @@ async
 async_start_worker docker-env -u -n
 async_register_callback docker-env docker-env-ready
 async_job docker-env test -e /tmp/docker-machine-running
-
-# usage: sleep 5; notify
-if [[ ! $(lsof -Pi :4321 -sTCP:LISTEN) ]]; then
-  function anysound() {
-    while true; do
-      nc -l 4321 && afplay -v 10 /System/Library/Sounds/Glass.aiff
-    done
-  }
-  anysound > /dev/null &!
-fi
-
-alias notify='echo 1 | nc 127.0.0.1 4321'
