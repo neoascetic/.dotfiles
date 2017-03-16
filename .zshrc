@@ -49,3 +49,15 @@ async
 async_start_worker docker-env -u -n
 async_register_callback docker-env docker-env-ready
 async_job docker-env test -e /tmp/docker-machine-running
+
+# usage: sleep 5; notify
+if [[ ! $(lsof -Pi :4321 -sTCP:LISTEN) ]]; then
+  function anysound() {
+    while true; do
+      nc -l 4321 && afplay -v 10 /System/Library/Sounds/Glass.aiff
+    done
+  }
+  anysound > /dev/null &!
+fi
+
+alias notify='echo 1 | nc 127.0.0.1 4321'
