@@ -9,6 +9,8 @@
 (setq linum-format "%d ")
 (global-linum-mode)
 
+(modify-syntax-entry ?_ "w")
+
 (xterm-mouse-mode t)
 (global-set-key [mouse-4] 'scroll-down-line)
 (global-set-key [mouse-5] 'scroll-up-line)
