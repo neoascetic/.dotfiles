@@ -20,6 +20,8 @@ function anysound() {
 [[ $(lsof -Pi :4321 -sTCP:LISTEN) ]] || anysound > /dev/null &!
 
 # other stuff
+WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
+
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
