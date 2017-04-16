@@ -39,6 +39,7 @@ EDITOR=emacs
 alias e=$EDITOR vim=e
 alias g=git
 alias ls="ls -GF"
+alias pyclean="find . -name '*.pyc' -delete"
 
 # register docker's env async
 function docker-machine() {
