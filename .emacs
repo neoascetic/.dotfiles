@@ -9,6 +9,13 @@
 (setq linum-format "%d ")
 (global-linum-mode)
 
+(setq isearch-forward t)
+(setq savehist-additional-variables
+      '(search-ring regexp-search-ring))
+(savehist-mode t)
+
+(setq vc-follow-symlinks t)
+
 (modify-syntax-entry ?_ "w")
 
 (xterm-mouse-mode t)
