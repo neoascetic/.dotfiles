@@ -45,6 +45,7 @@ alias pyclean="find . -name '*.pyc' -delete"
 function docker-machine() {
   command docker-machine $@
   if [[ "$1" = "start" ]]; then
+    docker-env-ready _ 0
     touch /tmp/docker-machine-running
   elif [[ "$1" = "stop" ]]; then
     rm /tmp/docker-machine-running
