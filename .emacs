@@ -76,12 +76,12 @@
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 (add-hook 'eval-expression-minibuffer-setup-hook 'paredit-mode)
 (add-hook
- 'paredit-mode-hook
- (lambda ()
-   (define-key paredit-mode-map (kbd "ESC <right>") 'paredit-backward-barf-sexp)
-   (define-key paredit-mode-map (kbd "ESC <left>") 'paredit-forward-barf-sexp)
-   (define-key paredit-mode-map (kbd "M-f") 'paredit-forward-slurp-sexp)
-   (define-key paredit-mode-map (kbd "M-b") 'paredit-backward-slurp-sexp)))
+  'paredit-mode-hook
+  (lambda ()
+    (define-key paredit-mode-map (kbd "ESC <right>") 'paredit-backward-barf-sexp)
+    (define-key paredit-mode-map (kbd "ESC <left>") 'paredit-forward-barf-sexp)
+    (define-key paredit-mode-map (kbd "M-f") 'paredit-forward-slurp-sexp)
+    (define-key paredit-mode-map (kbd "M-b") 'paredit-backward-slurp-sexp)))
 
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
@@ -95,7 +95,6 @@
       (yellow  "#ffff00")
       (blue    "#00ffff")
       (warning "#ff0000"))
-
   (custom-set-faces
     `(default ((t (:foreground ,fg-gray :background ,bg-gray))))
     `(cursor ((t (:background ,fg-gray))))
@@ -113,3 +112,15 @@
     `(font-lock-variable-name-face ((t (:foreground ,fg-gray))))
     `(minibuffer-prompt ((t (:foreground ,fg-gray :bold t))))
     `(font-lock-warning-face ((t (:foreground ,warning :bold t))))))
+
+; higlight numbers as constants
+(make-face 'font-lock-number-face)
+(set-face-attribute 'font-lock-number-face nil :inherit font-lock-constant-face)
+(setq font-lock-number-face 'font-lock-number-face)
+(defun add-font-lock-number ()
+  (font-lock-add-keywords
+   nil
+   (list
+    (list "\\<\\([+-]?[0-9]+\\([eE][+-]?[0-9]*\\)?\\)\\>" 0 font-lock-number-face)
+    (list "\\<\\(0[xX][0-9a-fA-F]+\\)\\>" 0 font-lock-number-face))))
+(add-hook 'prog-mode-hook 'add-font-lock-number)
