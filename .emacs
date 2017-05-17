@@ -60,6 +60,7 @@
 (setq undo-tree-history-directory-alist `(("." . "~/.emacs.d/undo")))
 
 (setq evil-want-C-u-scroll t)
+(setq evil-ex-substitute-global t)
 (setq evil-toggle-key "")
 (evil-mode)
 
@@ -88,7 +89,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; my-own stupid theme
-(let ((fg-gray "#606060")
+(let ((fg-gray "#808080")
       (bg-gray "#282828")
       (lg-gray "#2f2f2f")
       (purple  "#ff00ff")
