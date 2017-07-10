@@ -33,7 +33,7 @@
     filemode = true
     sharedRepository = group
     excludesfile = ~/.gitexclude
-    editor = vim
+    editor = emacsclient -t -a=
 
 [alias]
     co = checkout
@@ -49,9 +49,6 @@
 
 [push]
     default = current
-
-[merge]
-    tool = vimdiff
 
 [github]
     user = neoascetic
