@@ -59,6 +59,8 @@
 (setq undo-tree-auto-save-history t)
 (setq undo-tree-history-directory-alist `(("." . "~/.emacs.d/undo")))
 
+(add-to-list 'auto-mode-alist '("\\.md\\'" . text-mode))
+
 (setq evil-want-C-u-scroll t)
 (setq evil-ex-substitute-global t)
 (setq evil-toggle-key "")
@@ -84,6 +86,7 @@
     (define-key paredit-mode-map (kbd "M-f") 'paredit-forward-slurp-sexp)
     (define-key paredit-mode-map (kbd "M-b") 'paredit-backward-slurp-sexp)))
 
+;; g-q to refill a region or M-q to refill a paragraph
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook
  'text-mode-hook
