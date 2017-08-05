@@ -29,7 +29,8 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 setopt AUTOCD
 typeset -U path cdpath fpath
 cdpath=(. ~ ~/work ~/src $cdpath)
-path=(. vendor/bin node_modules/.bin /usr/local/bin /usr/local/sbin $path)
+path=(. $HOME/bin vendor/bin node_modules/.bin /usr/local/bin /usr/local/sbin $path)
+export GOPATH=$HOME
 
 HISTFILE="$HOME/.zhistory" SAVEHIST=1000 HISTSIZE=1000
 setopt INC_APPEND_HISTORY SHARE_HISTORY HIST_BEEP
