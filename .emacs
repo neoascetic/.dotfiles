@@ -44,6 +44,7 @@
 	undo-tree
 	company
 	hl-sexp
+	go-mode
 	paredit
 	goto-chg ; evil's dependency
 	evil))
