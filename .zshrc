@@ -9,6 +9,8 @@ function plug!() {
 plug! sindresorhus/pure async.zsh pure.zsh
 plug! paulirish/git-open git-open.plugin.zsh
 plug! zsh-users/zsh-completions zsh-completions.plugin.zsh
+VIRTUALENVWRAPPER_PYTHON=python3
+plug! sorin-ionescu/prezto modules/python/init.zsh
 
 # usage: sleep 5; notify
 alias notify='echo 1 | nc 127.0.0.1 4321'
