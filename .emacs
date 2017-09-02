@@ -108,6 +108,7 @@
     `(default ((t (:foreground ,fg-gray :background ,bg-gray))))
     `(cursor ((t (:background ,fg-gray))))
     `(fringe ((t (:background ,bg-gray))))
+    `(linum ((t (:foreground ,fg-gray))))
     `(mode-line ((t (:foreground ,bg-gray :background ,fg-gray))))
     `(region ((t (:background ,lg-gray))))
     `(secondary-selection ((t (:background ,lg-gray))))
