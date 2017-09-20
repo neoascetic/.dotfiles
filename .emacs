@@ -70,6 +70,7 @@
 (add-hook 'prog-mode-hook 'editorconfig-mode)
 (add-hook 'prog-mode-hook 'global-company-mode)
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
+(setq highlight-symbol-idle-delay 0.5)
 
 (add-hook 'lisp-mode-hook 'hl-sexp-mode)
 (add-hook 'clojure-mode-hook 'hl-sexp-mode)
