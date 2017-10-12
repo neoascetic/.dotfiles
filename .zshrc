@@ -2,7 +2,7 @@
 function plug!() {
   local arg=("${(@s/:/)1}") && r=$arg[1] && b=${arg[2]:=master}
   local dir="$HOME/.zsh/$r/$b"
-  [[ -d $dir ]] || git clone --depth=1 --branch=$b git://github.com/$r $dir
+  [[ -d $dir ]] || git clone --depth=1 --branch=$b https://github.com/$r $dir
   for f in "${@:2}"; do source "$dir/$f"; done
 }
 
@@ -59,7 +59,7 @@ function docker-env-ready() {
     return $(async_job docker-env 'sleep 5; test -e /tmp/docker-machine-running')
   fi
   async_stop_worker docker-env
-  eval $(docker-machine env)
+  eval $(docker-machine env --no-proxy)
 }
 
 async
