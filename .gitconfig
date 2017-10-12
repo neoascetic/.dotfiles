@@ -5,6 +5,9 @@
     name = Pavel Puchkin
     email = i@neoascetic.me
 
+[includeIf "gitdir:~/work/"]
+    path = ~/.gitconfig.work
+
 [color]
     ui = auto
 
