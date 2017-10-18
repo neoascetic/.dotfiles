@@ -42,7 +42,7 @@ EDITOR="emacsclient -t -a ''"
 alias e=$EDITOR vim=e
 alias g=git
 alias ls="ls -GF"
-alias bclean="find . -name '*.pyc' -name '*.beam' -delete"
+alias bclean="find . \( -name '*.pyc' -or -name '*.beam' \) -delete"
 
 # register docker's env async
 function docker-machine() {
