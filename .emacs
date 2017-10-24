@@ -67,6 +67,14 @@
 (setq evil-toggle-key "")
 (evil-mode)
 
+;; erlang stuff
+(setq erlang-path "/usr/local/lib/erlang") ; TODO: make it work with kerl
+(setq load-path (cons (concat erlang-path "/lib/tools-2.11/emacs/") load-path))
+(setq erlang-root-dir erlang-path)
+(setq exec-path (cons (concat erlang-path "/bin") exec-path))
+(require 'erlang-start)
+(require 'erlang-flymake)
+
 (add-hook 'prog-mode-hook 'editorconfig-mode)
 (add-hook 'prog-mode-hook 'global-company-mode)
 (add-hook 'prog-mode-hook 'highlight-symbol-mode)
