@@ -9,6 +9,9 @@
 (setq linum-format "%d ")
 (global-linum-mode)
 
+(setq-default indent-tabs-mode nil)
+(setq tab-width 4)
+
 (setq isearch-forward t)
 (setq savehist-additional-variables
       '(search-ring regexp-search-ring))
