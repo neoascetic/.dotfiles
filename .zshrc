@@ -43,26 +43,3 @@ alias e=$EDITOR vim=e
 alias g=git
 alias ls="ls -GF"
 alias bclean="find . \( -name '*.pyc' -or -name '*.beam' \) -delete"
-
-# register docker's env async
-function docker-machine() {
-  command docker-machine $@
-  if [[ "$1" = "start" ]]; then
-    docker-env-ready _ 0
-    touch /tmp/docker-machine-running
-  elif [[ "$1" = "stop" ]]; then
-    rm /tmp/docker-machine-running
-  fi
-}
-function docker-env-ready() {
-  if (( $2 )); then
-    return $(async_job docker-env 'sleep 5; test -e /tmp/docker-machine-running')
-  fi
-  async_stop_worker docker-env
-  eval $(docker-machine env --no-proxy)
-}
-
-async
-async_start_worker docker-env -u -n
-async_register_callback docker-env docker-env-ready
-async_job docker-env test -e /tmp/docker-machine-running
