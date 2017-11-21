@@ -48,6 +48,7 @@
 	company
 	hl-sexp
 	go-mode
+        neotree
 	paredit
 	goto-chg ; evil's dependency
 	evil))
@@ -64,6 +65,16 @@
 (setq undo-tree-history-directory-alist `(("." . "~/.emacs.d/undo")))
 
 (add-to-list 'auto-mode-alist '("\\.md\\'" . text-mode))
+
+(global-set-key [f8] 'neotree-toggle)
+(add-hook
+  'neotree-mode-hook
+  (lambda ()
+    (define-key evil-normal-state-local-map (kbd "H") 'neotree-hidden-file-toggle)
+    (define-key evil-normal-state-local-map (kbd "TAB") 'neotree-enter)
+    (define-key evil-normal-state-local-map (kbd "SPC") 'neotree-quick-look)
+    (define-key evil-normal-state-local-map (kbd "q") 'neotree-hide)
+    (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
 
 (setq evil-want-C-u-scroll t)
 (setq evil-ex-substitute-global t)
