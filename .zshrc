@@ -11,6 +11,7 @@ plug! paulirish/git-open git-open.plugin.zsh
 plug! zsh-users/zsh-completions zsh-completions.plugin.zsh
 VIRTUALENVWRAPPER_PYTHON=python3
 plug! sorin-ionescu/prezto modules/python/init.zsh
+plug! sorin-ionescu/prezto modules/docker/init.zsh
 
 # usage: sleep 5; notify
 alias notify='echo 1 | nc 127.0.0.1 4321'
