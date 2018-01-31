@@ -117,8 +117,6 @@
  (lambda ()
    (setq default-justification 'full)))
 
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
 ;; my-own stupid theme
 (let ((fg-gray "#808080")
       (bg-gray "#282828")
