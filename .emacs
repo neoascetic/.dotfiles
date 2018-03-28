@@ -19,8 +19,6 @@
 
 (setq vc-follow-symlinks t)
 
-(modify-syntax-entry ?_ "w")
-
 (xterm-mouse-mode t)
 (global-set-key [mouse-4] 'scroll-down-line)
 (global-set-key [mouse-5] 'scroll-up-line)
@@ -116,6 +114,9 @@
  'text-mode-hook
  (lambda ()
    (setq default-justification 'full)))
+
+(with-eval-after-load 'evil
+    (defalias #'forward-evil-word #'forward-evil-symbol))
 
 ;; my-own stupid theme
 (let ((fg-gray "#808080")
