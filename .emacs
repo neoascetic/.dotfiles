@@ -116,7 +116,9 @@
    (setq default-justification 'full)))
 
 (with-eval-after-load 'evil
-    (defalias #'forward-evil-word #'forward-evil-symbol))
+  (define-key isearch-mode-map (kbd "<down>") 'isearch-ring-advance)
+  (define-key isearch-mode-map (kbd "<up>") 'isearch-ring-retreat)
+  (defalias #'forward-evil-word #'forward-evil-symbol))
 
 ;; my-own stupid theme
 (let ((fg-gray "#808080")
