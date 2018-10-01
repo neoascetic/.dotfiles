@@ -6,5 +6,6 @@
 *.py[co]
 *.sw[po]
 *.log
+log
 
 .DS_Store
