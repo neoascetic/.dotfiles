@@ -46,6 +46,9 @@
 	company
 	hl-sexp
 	go-mode
+        lua-mode
+        epl pkg-info ; elixir's dependencies
+        elixir-mode
         neotree
 	paredit
 	goto-chg ; evil's dependency
@@ -81,7 +84,7 @@
 
 ;; erlang stuff
 (setq erlang-path "/usr/local/lib/erlang") ; TODO: make it work with kerl
-(setq load-path (cons (concat erlang-path "/lib/tools-2.11.1/emacs/") load-path))
+(setq load-path (cons (concat erlang-path "/lib/tools-3.0.2/emacs/") load-path))
 (setq erlang-root-dir erlang-path)
 (setq exec-path (cons (concat erlang-path "/bin") exec-path))
 (require 'erlang-start)
