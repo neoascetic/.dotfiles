@@ -10,6 +10,7 @@ plug! sindresorhus/pure async.zsh pure.zsh
 plug! paulirish/git-open git-open.plugin.zsh
 plug! zsh-users/zsh-completions zsh-completions.plugin.zsh
 VIRTUALENVWRAPPER_PYTHON=python3
+plug! sorin-ionescu/prezto init.zsh
 plug! sorin-ionescu/prezto modules/python/init.zsh
 plug! sorin-ionescu/prezto modules/docker/init.zsh
 
