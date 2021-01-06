@@ -40,8 +40,8 @@ HISTFILE="$HOME/.zhistory" SAVEHIST=1000 HISTSIZE=1000
 setopt INC_APPEND_HISTORY SHARE_HISTORY HIST_BEEP
 setopt HIST_IGNORE_DUPS HIST_IGNORE_ALL_DUPS HIST_EXPIRE_DUPS_FIRST HIST_SAVE_NO_DUPS
 
-EDITOR="emacsclient -t -a ''"
-alias e=$EDITOR vim=e
+EDITOR=vim
+alias e=$EDITOR
 alias g=git
 alias ls="ls -GF"
 alias bclean="find . \( -name '*.pyc' -or -name '*.beam' \) -delete"

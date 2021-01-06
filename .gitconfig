@@ -36,7 +36,7 @@
     filemode = true
     sharedRepository = group
     excludesfile = ~/.gitexclude
-    editor = emacsclient -t -a=
+    editor = vim
 
 [alias]
     co = checkout
