@@ -6,7 +6,7 @@ function plug!() {
   for f in "${@:2}"; do source "$dir/$f"; done
 }
 
-plug! sindresorhus/pure async.zsh pure.zsh
+plug! sindresorhus/pure:main async.zsh pure.zsh
 plug! paulirish/git-open git-open.plugin.zsh
 plug! zsh-users/zsh-completions zsh-completions.plugin.zsh
 VIRTUALENVWRAPPER_PYTHON=python3
