@@ -10,6 +10,10 @@ set number
 highlight FoldColumn ctermfg=white ctermbg=white
 highlight EndOfBuffer ctermfg=white
 
+" format/justify paragraphs with Ctrl+j
+set formatprg=par\ -j1\ -P="\ "
+nnoremap <C-j> {gq}
+
 let s:_writer_mode=0
 function WriterMode()
   if s:_writer_mode
