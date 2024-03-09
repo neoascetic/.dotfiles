@@ -6,3 +6,19 @@ set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 set number
+
+highlight FoldColumn ctermfg=white ctermbg=white
+highlight EndOfBuffer ctermfg=white
+
+let s:_writer_mode=0
+function WriterMode()
+  if s:_writer_mode
+    setlocal number
+    setlocal foldcolumn=1
+  else
+    setlocal nonumber
+    setlocal foldcolumn=12
+  endif
+  let s:_writer_mode=s:_writer_mode ? 0 : 1
+endfunction
+:command! WriterMode :call WriterMode()
