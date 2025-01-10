@@ -11,28 +11,18 @@ function plug!() {
 typeset -U path cdpath fpath
 path=(. $HOME/bin vendor/bin node_modules/.bin /usr/local/bin /usr/local/sbin $path)
 
+# other stuff
+VIRTUALENVWRAPPER_PYTHON=python3
+WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
+
 plug! ohmyzsh/ohmyzsh plugins/dotenv/dotenv.plugin.zsh
 plug! sindresorhus/pure:main async.zsh pure.zsh
 plug! paulirish/git-open git-open.plugin.zsh
 plug! zsh-users/zsh-completions zsh-completions.plugin.zsh
 plug! sorin-ionescu/prezto init.zsh
-VIRTUALENVWRAPPER_PYTHON=python3
 plug! sorin-ionescu/prezto modules/python/init.zsh
 plug! sorin-ionescu/prezto modules/docker/init.zsh
 plug! asdf-vm/asdf:v0.15.0 asdf.sh
-
-# usage: sleep 5; notify
-alias notify='echo 1 | nc 127.0.0.1 4321'
-function anysound() {
-  while true; do
-    nc -l 4321 && afplay -v 10 /System/Library/Sounds/Glass.aiff
-  done
-}
-[[ $(lsof -Pi :4321 -sTCP:LISTEN) ]] || anysound > /dev/null &!
-
-# other stuff
-WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
-
 
 setopt AUTOCD
 cdpath=(. ~ ~/work ~/src $cdpath)
